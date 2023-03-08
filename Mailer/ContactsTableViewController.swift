@@ -5,7 +5,6 @@
 //  Copyright © 2017 Trainline. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class ContactsTableViewController: UITableViewController {
