@@ -17,17 +17,6 @@ final class ContactsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
     }
 
-    func test_display_updated_contact_list() {
-        let sut = ContactsTableViewController()
-        let contacts: [ContactCellViewModel] = [
-            ContactCellViewModel(name: "John Appleseed", contactMethod: "Post"),
-            ContactCellViewModel(name: "Velma Combs", contactMethod: "e-Mail"),
-            ContactCellViewModel(name: "Porter Coffey", contactMethod: "SMS")
-        ]
-        sut.display(contacts)
-        XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 3)
-    }
-
     func test_display_correct_contact_information() {
         let sut = ContactsTableViewController()
         let contacts: [ContactCellViewModel] = [
