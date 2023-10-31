@@ -14,28 +14,34 @@ final class ContactsTableViewControllerTests: XCTestCase {
 
     func test_has_no_contacts_when_view_loads() {
         let sut = ContactsTableViewController()
-        XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
+        sut.hasNoContacts()
     }
 
     func test_display_correct_contact_information() {
         let sut = ContactsTableViewController()
-        let contacts: [ContactCellViewModel] = [
-            ContactCellViewModel(name: "John Appleseed", contactMethod: "Post"),
-            ContactCellViewModel(name: "Velma Combs", contactMethod: "e-Mail"),
-            ContactCellViewModel(name: "Porter Coffey", contactMethod: "SMS")
-        ]
+        
+        let contacts: [ContactCellViewModel] = ContactCellViewModel.dummyData
         sut.display(contacts)
 
-        let row1 = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 0, section: 1))
-        XCTAssertEqual(row1.textLabel?.text, "John Appleseed")
-        XCTAssertEqual(row1.detailTextLabel?.text, "Post")
+        sut.isDisplaying(contacts)
+    }
+}
 
-        let row2 = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 1, section: 1))
-        XCTAssertEqual(row2.textLabel?.text, "Velma Combs")
-        XCTAssertEqual(row2.detailTextLabel?.text, "e-Mail")
+private extension ContactsTableViewController {
 
-        let row3 = sut.tableView(sut.tableView, cellForRowAt: IndexPath(row: 2, section: 1))
-        XCTAssertEqual(row3.textLabel?.text, "Porter Coffey")
-        XCTAssertEqual(row3.detailTextLabel?.text, "SMS")
+    func hasNoContacts(file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertEqual(tableView(tableView, numberOfRowsInSection: 0), 0, file: file, line: line)
+    }
+
+    func isDisplaying(_ contacts: [ContactCellViewModel], file: StaticString = #filePath, line: UInt = #line) {
+        contacts.enumerated().forEach { (index, contact) in
+            isDisplaying(contact, atIndex: index, file: file, line: line)
+        }
+    }
+
+    private func isDisplaying(_ contact: ContactCellViewModel, atIndex index: Int, file: StaticString, line: UInt) {
+        let row = tableView(tableView, cellForRowAt: IndexPath(row: index, section: 0))
+        XCTAssertEqual(row.textLabel?.text, contact.name, file: file, line: line)
+        XCTAssertEqual(row.detailTextLabel?.text, contact.contactMethod, file: file, line: line)
     }
 }
