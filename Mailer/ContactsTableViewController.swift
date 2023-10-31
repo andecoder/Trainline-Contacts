@@ -10,7 +10,9 @@ import UIKit
 final class ContactsTableViewController: UITableViewController {
     
     private let cellIdentifier = "ContactsTableViewCell"
-    
+
+    private var contacts: [ContactCellViewModel] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,7 @@ final class ContactsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return contacts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,5 +40,10 @@ final class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(DetailsTableViewController(), animated: true)
         //TODO: Implement me
+    }
+
+    func display(_ contacts: [ContactCellViewModel]) {
+        self.contacts = contacts
+        tableView.reloadData()
     }
 }
