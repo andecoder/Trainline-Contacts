@@ -31,9 +31,12 @@ final class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        cell.textLabel?.text = "John Appleseed"
-        cell.detailTextLabel?.text = "Post"
-        //TODO: Implement me
+        if contacts.count > indexPath.row {
+            let contact = contacts[indexPath.row]
+            cell.textLabel?.text = contact.name
+            cell.detailTextLabel?.text = contact.contactMethod
+        }
+
         return cell
     }
     
