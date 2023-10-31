@@ -5,7 +5,6 @@
 //  Copyright © 2020 Trainline. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 final class ContactTableViewCell: UITableViewCell {
