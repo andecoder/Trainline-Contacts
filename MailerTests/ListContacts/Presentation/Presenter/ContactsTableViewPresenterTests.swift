@@ -12,13 +12,6 @@ import XCTest
 
 final class ContactsTableViewPresenterTests: XCTestCase {
 
-    func test_loadContacts_make_request_to_service() {
-        let service = ContactLoaderServiceSpy()
-        let sut = ContactsTableViewPresenter(service: service)
-        sut.loadContacts()
-        XCTAssertTrue(service.loadContactsCalled)
-    }
-
     func test_loadContacts_only_makes_one_request_to_service() {
         let service = ContactLoaderServiceSpy()
         let sut = ContactsTableViewPresenter(service: service)
@@ -28,11 +21,9 @@ final class ContactsTableViewPresenterTests: XCTestCase {
 
     private final class ContactLoaderServiceSpy: ContactLoaderService {
 
-        private(set) var loadContactsCalled = false
         private(set) var loadContactsCount = 0
 
         func loadContacts() {
-            loadContactsCalled = true
             loadContactsCount += 1
         }
     }
