@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C79247921F71ACF00C7E3C2 /* CSVWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247021F71ACF00C7E3C2 /* CSVWriter.swift */; };
+		0C79247A21F71ACF00C7E3C2 /* CSVReaderWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247121F71ACF00C7E3C2 /* CSVReaderWriter.swift */; };
+		0C79247B21F71ACF00C7E3C2 /* CSVReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247321F71ACF00C7E3C2 /* CSVReading.swift */; };
+		0C79247C21F71ACF00C7E3C2 /* StreamClosable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247421F71ACF00C7E3C2 /* StreamClosable.swift */; };
+		0C79247D21F71ACF00C7E3C2 /* CSVWriting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247521F71ACF00C7E3C2 /* CSVWriting.swift */; };
+		0C79247E21F71ACF00C7E3C2 /* StreamOpenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247621F71ACF00C7E3C2 /* StreamOpenable.swift */; };
+		0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247721F71ACF00C7E3C2 /* CSVReader.swift */; };
+		1B0085D624192A9100143B22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B0085D524192A9100143B22 /* README.md */; };
+		1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */; };
+		1B632785241938D1001943B8 /* MailerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B632784241938D1001943B8 /* MailerTests.swift */; };
+		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
+		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
+		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
+		9A3AB2901F576EAD00C822CF /* Contacts.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9A3AB28F1F576EAD00C822CF /* Contacts.csv */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B632787241938D1001943B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3AB26C1F57699C00C822CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A3AB2731F57699C00C822CF;
+			remoteInfo = Mailer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C79247021F71ACF00C7E3C2 /* CSVWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVWriter.swift; sourceTree = "<group>"; };
+		0C79247121F71ACF00C7E3C2 /* CSVReaderWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVReaderWriter.swift; sourceTree = "<group>"; };
+		0C79247321F71ACF00C7E3C2 /* CSVReading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVReading.swift; sourceTree = "<group>"; };
+		0C79247421F71ACF00C7E3C2 /* StreamClosable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamClosable.swift; sourceTree = "<group>"; };
+		0C79247521F71ACF00C7E3C2 /* CSVWriting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVWriting.swift; sourceTree = "<group>"; };
+		0C79247621F71ACF00C7E3C2 /* StreamOpenable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamOpenable.swift; sourceTree = "<group>"; };
+		0C79247721F71ACF00C7E3C2 /* CSVReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVReader.swift; sourceTree = "<group>"; };
+		1B0085D524192A9100143B22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		1B632782241938D1001943B8 /* MailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B632784241938D1001943B8 /* MailerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailerTests.swift; sourceTree = "<group>"; };
+		1B632786241938D1001943B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		9A3AB28F1F576EAD00C822CF /* Contacts.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Contacts.csv; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B63277F241938D1001943B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A3AB2711F57699C00C822CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C79247221F71ACF00C7E3C2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0C79247321F71ACF00C7E3C2 /* CSVReading.swift */,
+				0C79247421F71ACF00C7E3C2 /* StreamClosable.swift */,
+				0C79247521F71ACF00C7E3C2 /* CSVWriting.swift */,
+				0C79247621F71ACF00C7E3C2 /* StreamOpenable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		1B632783241938D1001943B8 /* MailerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B632784241938D1001943B8 /* MailerTests.swift */,
+				1B632786241938D1001943B8 /* Info.plist */,
+			);
+			path = MailerTests;
+			sourceTree = "<group>";
+		};
+		9A3AB26B1F57699C00C822CF = {
+			isa = PBXGroup;
+			children = (
+				1B0085D524192A9100143B22 /* README.md */,
+				9A3AB2761F57699C00C822CF /* Mailer */,
+				9A3AB2891F5769CB00C822CF /* Supporting Files */,
+				1B632783241938D1001943B8 /* MailerTests */,
+				9A3AB2751F57699C00C822CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A3AB2751F57699C00C822CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A3AB2741F57699C00C822CF /* Mailer.app */,
+				1B632782241938D1001943B8 /* MailerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A3AB2761F57699C00C822CF /* Mailer */ = {
+			isa = PBXGroup;
+			children = (
+				9A3AB2771F57699C00C822CF /* AppDelegate.swift */,
+				9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */,
+				1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */,
+				9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */,
+				9A3AB28E1F576DA700C822CF /* CSV */,
+			);
+			path = Mailer;
+			sourceTree = "<group>";
+		};
+		9A3AB2891F5769CB00C822CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A3AB28F1F576EAD00C822CF /* Contacts.csv */,
+				9A3AB2831F57699C00C822CF /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A3AB28E1F576DA700C822CF /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				0C79247221F71ACF00C7E3C2 /* Protocol */,
+				0C79247021F71ACF00C7E3C2 /* CSVWriter.swift */,
+				0C79247121F71ACF00C7E3C2 /* CSVReaderWriter.swift */,
+				0C79247721F71ACF00C7E3C2 /* CSVReader.swift */,
+			);
+			path = CSV;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B632781241938D1001943B8 /* MailerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B63278B241938D1001943B8 /* Build configuration list for PBXNativeTarget "MailerTests" */;
+			buildPhases = (
+				1B63277E241938D1001943B8 /* Sources */,
+				1B63277F241938D1001943B8 /* Frameworks */,
+				1B632780241938D1001943B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B632788241938D1001943B8 /* PBXTargetDependency */,
+			);
+			name = MailerTests;
+			productName = MailerTests;
+			productReference = 1B632782241938D1001943B8 /* MailerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A3AB2731F57699C00C822CF /* Mailer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A3AB2861F57699C00C822CF /* Build configuration list for PBXNativeTarget "Mailer" */;
+			buildPhases = (
+				9A3AB2701F57699C00C822CF /* Sources */,
+				9A3AB2711F57699C00C822CF /* Frameworks */,
+				9A3AB2721F57699C00C822CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mailer;
+			productName = Mailer;
+			productReference = 9A3AB2741F57699C00C822CF /* Mailer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A3AB26C1F57699C00C822CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Trainline;
+				TargetAttributes = {
+					1B632781241938D1001943B8 = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = 4FM8U3FD59;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9A3AB2731F57699C00C822CF;
+					};
+					9A3AB2731F57699C00C822CF = {
+						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 1130;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9A3AB26F1F57699C00C822CF /* Build configuration list for PBXProject "Mailer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A3AB26B1F57699C00C822CF;
+			productRefGroup = 9A3AB2751F57699C00C822CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A3AB2731F57699C00C822CF /* Mailer */,
+				1B632781241938D1001943B8 /* MailerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B632780241938D1001943B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A3AB2721F57699C00C822CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0085D624192A9100143B22 /* README.md in Resources */,
+				9A3AB2901F576EAD00C822CF /* Contacts.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B63277E241938D1001943B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B632785241938D1001943B8 /* MailerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A3AB2701F57699C00C822CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C79247C21F71ACF00C7E3C2 /* StreamClosable.swift in Sources */,
+				0C79247D21F71ACF00C7E3C2 /* CSVWriting.swift in Sources */,
+				1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */,
+				0C79247921F71ACF00C7E3C2 /* CSVWriter.swift in Sources */,
+				9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */,
+				9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */,
+				0C79247A21F71ACF00C7E3C2 /* CSVReaderWriter.swift in Sources */,
+				0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */,
+				9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */,
+				0C79247B21F71ACF00C7E3C2 /* CSVReading.swift in Sources */,
+				0C79247E21F71ACF00C7E3C2 /* StreamOpenable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B632788241938D1001943B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A3AB2731F57699C00C822CF /* Mailer */;
+			targetProxy = 1B632787241938D1001943B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B632789241938D1001943B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4FM8U3FD59;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MailerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverpoole.MailerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mailer.app/Mailer";
+			};
+			name = Debug;
+		};
+		1B63278A241938D1001943B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4FM8U3FD59;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MailerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oliverpoole.MailerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mailer.app/Mailer";
+			};
+			name = Release;
+		};
+		9A3AB2841F57699C00C822CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A3AB2851F57699C00C822CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A3AB2871F57699C00C822CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.Mailer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		9A3AB2881F57699C00C822CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.Mailer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B63278B241938D1001943B8 /* Build configuration list for PBXNativeTarget "MailerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B632789241938D1001943B8 /* Debug */,
+				1B63278A241938D1001943B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A3AB26F1F57699C00C822CF /* Build configuration list for PBXProject "Mailer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A3AB2841F57699C00C822CF /* Debug */,
+				9A3AB2851F57699C00C822CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A3AB2861F57699C00C822CF /* Build configuration list for PBXNativeTarget "Mailer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A3AB2871F57699C00C822CF /* Debug */,
+				9A3AB2881F57699C00C822CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A3AB26C1F57699C00C822CF /* Project object */;
+}
