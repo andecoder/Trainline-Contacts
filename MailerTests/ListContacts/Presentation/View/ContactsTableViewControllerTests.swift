@@ -26,13 +26,6 @@ final class ContactsTableViewControllerTests: XCTestCase {
         sut.isDisplaying(contacts)
     }
 
-    func test_load_contacts_when_view_loads() {
-        let useCase = LoadContactsUseCaseSpy()
-        let sut = makeSUT(useCase: useCase)
-        sut.loadViewIfNeeded()
-        XCTAssertTrue(useCase.loadContactsCalled)
-    }
-
     func test_only_load_contacts_once_when_view_loads() {
         let useCase = LoadContactsUseCaseSpy()
         let sut = makeSUT(useCase: useCase)
@@ -48,11 +41,9 @@ final class ContactsTableViewControllerTests: XCTestCase {
 
     private final class LoadContactsUseCaseSpy: LoadContactsUseCase {
 
-        private(set) var loadContactsCalled = false
         private(set) var loadContactsCount = 0
 
         func loadContacts() {
-            loadContactsCalled = true
             loadContactsCount += 1
         }
     }
