@@ -14,8 +14,8 @@ import Foundation
 }
 
 /// CSVReaderWriter is a subclass of NSObject for Objective-C backwards compatibility.
-@objcMembers class CSVReaderWriter: NSObject {
-    
+@objcMembers final class CSVReaderWriter: NSObject {
+
     private let reader: CSVReading
     private let writer: CSVWriting
     private let separator: String

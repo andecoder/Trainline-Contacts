@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailsTableViewController: UITableViewController {
+final class DetailsTableViewController: UITableViewController {
 
     private let cellIdentifier = "DetailsTableViewCell"
     

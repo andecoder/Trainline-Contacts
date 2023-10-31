@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ContactsTableViewController: UITableViewController {
+final class ContactsTableViewController: UITableViewController {
     
     private let cellIdentifier = "ContactsTableViewCell"
     

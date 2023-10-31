@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objcMembers class CSVReader: NSObject, CSVReading {
+@objcMembers final class CSVReader: NSObject, CSVReading {
 
     private let separator: String
     var inputStream: InputStream?

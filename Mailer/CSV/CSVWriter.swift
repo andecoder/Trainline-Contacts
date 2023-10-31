@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objcMembers class CSVWriter: NSObject, CSVWriting {
+@objcMembers final class CSVWriter: NSObject, CSVWriting {
     var outputStream: OutputStream?
 
     func close() {
