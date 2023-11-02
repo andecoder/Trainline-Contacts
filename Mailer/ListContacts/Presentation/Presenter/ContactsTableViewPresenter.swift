@@ -26,9 +26,13 @@ final class ContactsTableViewPresenter {
 
     func loadContacts() {
         service.loadContacts { result in
-            if case let .success(contacts) = result {
-                _ = self.mapper(contacts)
+            switch result {
+            case let .success(contacts):
+                let viewModels = self.mapper(contacts)
+                self.view.display(viewModels)
+            case .failure:
+                self.view.display([])
             }
-            self.view.display([])
+        }
     }
 }

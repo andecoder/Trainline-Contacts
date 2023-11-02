@@ -40,6 +40,12 @@ final class ContactsTableViewPresenterTests: XCTestCase {
         XCTAssertEqual(receivedContacts, Contact.dummyData)
     }
 
+    func test_display_correct_contact_list_when_loadContacts_request_succeeds() {
+        let view = ContactListViewSpy()
+        let sut = makeSUT(view: view) { _ in ContactCellViewModel.dummyData }
+        XCTAssertEqual(view.displayedContacts, ContactCellViewModel.dummyData)
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
