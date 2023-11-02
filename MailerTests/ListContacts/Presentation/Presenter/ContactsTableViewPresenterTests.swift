@@ -14,8 +14,7 @@ final class ContactsTableViewPresenterTests: XCTestCase {
 
     func test_loadContacts_only_makes_one_request_to_service() {
         let service = ContactLoaderServiceMock()
-        let sut = ContactsTableViewPresenter(service: service, view: ContactListViewSpy()) { _ in [] }
-        sut.loadContacts()
+        let sut = makeSUT(service: service)
         XCTAssertEqual(service.loadContactsCount, 1)
     }
 
@@ -25,24 +24,32 @@ final class ContactsTableViewPresenterTests: XCTestCase {
         let service = ContactLoaderServiceMock()
         service.loadContactsReturn = .failure(TestError())
         let view = ContactListViewSpy()
-        let sut = ContactsTableViewPresenter(service: service, view: view) { _ in [] }
-        sut.loadContacts()
+        let sut = makeSUT(service: service, view: view)
         XCTAssertEqual(view.displayedContacts, [])
     }
 
     func test_mapper_receives_contacts_from_successful_loadContacts_request() {
-        let service = ContactLoaderServiceMock()
-        let view = ContactListViewSpy()
         var receivedContacts: [Contact]?
         let expectation = XCTestExpectation()
-        let sut = ContactsTableViewPresenter(service: service, view: view) { contacts in
+        let sut = makeSUT { contacts in
             receivedContacts = contacts
             expectation.fulfill()
             return []
         }
-        sut.loadContacts()
         wait(for: [expectation], timeout: 0.1)
         XCTAssertEqual(receivedContacts, Contact.dummyData)
+    }
+
+    // MARK: Helpers
+
+    private func makeSUT(
+        service: ContactLoaderService = ContactLoaderServiceMock(),
+        view: ContactListView = ContactListViewSpy(),
+        mapper: @escaping ([Contact]) -> [ContactCellViewModel] = { _ in [] }
+    ) -> ContactsTableViewPresenter {
+        let sut = ContactsTableViewPresenter(service: service, view: view, mapper: mapper)
+        sut.loadContacts()
+        return sut
     }
 
     private final class ContactListViewSpy: ContactListView {
