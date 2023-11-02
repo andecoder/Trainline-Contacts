@@ -13,17 +13,39 @@ import XCTest
 final class ContactsTableViewControllerTests: XCTestCase {
 
     func test_has_no_contacts_when_view_loads() {
-        let sut = ContactsTableViewController()
+        let sut = makeSUT()
         sut.hasNoContacts()
     }
 
     func test_display_correct_contact_information() {
-        let sut = ContactsTableViewController()
-        
+        let sut = makeSUT()
+
         let contacts: [ContactCellViewModel] = ContactCellViewModel.dummyData
         sut.display(contacts)
 
         sut.isDisplaying(contacts)
+    }
+
+    func test_load_contacts_when_view_loads() {
+        let useCase = LoadContactsUseCaseSpy()
+        let sut = makeSUT(useCase: useCase)
+        sut.loadViewIfNeeded()
+        XCTAssertTrue(useCase.loadContactsCalled)
+    }
+
+    // MARK: Helpers
+
+    private func makeSUT(useCase: LoadContactsUseCase = LoadContactsUseCaseSpy()) -> ContactsTableViewController {
+        ContactsTableViewController(useCase: useCase)
+    }
+
+    private final class LoadContactsUseCaseSpy: LoadContactsUseCase {
+
+        private(set) var loadContactsCalled = false
+
+        func loadContacts() {
+            loadContactsCalled = true
+        }
     }
 }
 

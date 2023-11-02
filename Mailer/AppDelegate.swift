@@ -14,8 +14,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let viewController = ContactsTableViewController()
-        
+        let fakeUseCase = LoadContactsFakeUseCase()
+        let viewController = ContactsTableViewController(useCase: fakeUseCase)
+
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.prefersLargeTitles = true
         
@@ -35,4 +36,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    private final class LoadContactsFakeUseCase: LoadContactsUseCase {
+
+        func loadContacts() { }
+    }
 }
