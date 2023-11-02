@@ -18,3 +18,10 @@ extension ContactCellViewModel {
         ContactCellViewModel(name: "Porter Coffey", contactMethod: "SMS")
     ]
 }
+
+extension ContactCellViewModel: Equatable {
+
+    public static func == (lhs: ContactCellViewModel, rhs: ContactCellViewModel) -> Bool {
+        lhs.name == rhs.name && lhs.contactMethod == rhs.contactMethod
+    }
+}

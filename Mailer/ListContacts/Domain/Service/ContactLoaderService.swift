@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ContactLoaderService {
-    func loadContacts()
+    func loadContacts(completion: @escaping (Result<[Contact], Error>) -> Void)
 }
