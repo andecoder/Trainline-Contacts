@@ -11,12 +11,15 @@ import Foundation
 final class ContactsTableViewPresenter {
 
     private let service: ContactLoaderService
+    private let view: ContactListView
 
-    init(service: ContactLoaderService) {
+    init(service: ContactLoaderService, view: ContactListView) {
         self.service = service
+        self.view = view
     }
 
     func loadContacts() {
         service.loadContacts()
+        view.display([])
     }
 }
