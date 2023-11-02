@@ -49,12 +49,17 @@ final class ContactsTableViewPresenterTests: XCTestCase {
     // MARK: Helpers
 
     private func makeSUT(
-        service: ContactLoaderService = ContactLoaderServiceMock(),
-        view: ContactListView = ContactListViewSpy(),
+        service: ContactLoaderServiceMock = ContactLoaderServiceMock(),
+        view: ContactListViewSpy = ContactListViewSpy(),
+        file: StaticString = #filePath,
+        line: UInt = #line,
         mapper: @escaping ([Contact]) -> [ContactCellViewModel] = { _ in [] }
     ) -> ContactsTableViewPresenter {
         let sut = ContactsTableViewPresenter(service: service, view: view, mapper: mapper)
         sut.loadContacts()
+        checkForMemoryLeak(on: service, file: file, line: line)
+        checkForMemoryLeak(on: sut, file: file, line: line)
+        checkForMemoryLeak(on: view, file: file, line: line)
         return sut
     }
 

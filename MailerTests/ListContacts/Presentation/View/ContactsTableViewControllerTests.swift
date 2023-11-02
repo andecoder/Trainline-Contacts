@@ -35,8 +35,14 @@ final class ContactsTableViewControllerTests: XCTestCase {
 
     // MARK: Helpers
 
-    private func makeSUT(useCase: LoadContactsUseCase = LoadContactsUseCaseSpy()) -> ContactsTableViewController {
-        ContactsTableViewController(useCase: useCase)
+    private func makeSUT(
+        useCase: LoadContactsUseCase = LoadContactsUseCaseSpy(),
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> ContactsTableViewController {
+        let sut = ContactsTableViewController(useCase: useCase)
+        checkForMemoryLeak(on: sut, file: file, line: line)
+        return sut
     }
 
     private final class LoadContactsUseCaseSpy: LoadContactsUseCase {
