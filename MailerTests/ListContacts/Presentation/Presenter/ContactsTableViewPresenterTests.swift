@@ -14,7 +14,7 @@ final class ContactsTableViewPresenterTests: XCTestCase {
 
     func test_loadContacts_only_makes_one_request_to_service() {
         let service = ContactLoaderServiceMock()
-        let sut = makeSUT(service: service)
+        _ = makeSUT(service: service)
         XCTAssertEqual(service.loadContactsCount, 1)
     }
 
@@ -24,14 +24,14 @@ final class ContactsTableViewPresenterTests: XCTestCase {
         let service = ContactLoaderServiceMock()
         service.loadContactsReturn = .failure(TestError())
         let view = ContactListViewSpy()
-        let sut = makeSUT(service: service, view: view)
+        _ = makeSUT(service: service, view: view)
         XCTAssertEqual(view.displayedContacts, [])
     }
 
     func test_mapper_receives_contacts_from_successful_loadContacts_request() {
         var receivedContacts: [Contact]?
         let expectation = XCTestExpectation()
-        let sut = makeSUT { contacts in
+        _ = makeSUT { contacts in
             receivedContacts = contacts
             expectation.fulfill()
             return []
@@ -42,7 +42,7 @@ final class ContactsTableViewPresenterTests: XCTestCase {
 
     func test_display_correct_contact_list_when_loadContacts_request_succeeds() {
         let view = ContactListViewSpy()
-        let sut = makeSUT(view: view) { _ in ContactCellViewModel.dummyData }
+        _ = makeSUT(view: view) { _ in ContactCellViewModel.dummyData }
         XCTAssertEqual(view.displayedContacts, ContactCellViewModel.dummyData)
     }
 
