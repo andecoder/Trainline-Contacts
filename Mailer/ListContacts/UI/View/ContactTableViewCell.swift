@@ -17,4 +17,8 @@ final class ContactTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
+    func display(_ viewModel: ContactCellViewModel) {
+        textLabel?.text = viewModel.name
+        detailTextLabel?.text = viewModel.contactMethod
+    }
 }
