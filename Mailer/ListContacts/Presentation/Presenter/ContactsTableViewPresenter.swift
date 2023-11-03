@@ -10,16 +10,13 @@ import Foundation
 
 final class ContactsTableViewPresenter {
 
-    private let mapper: ([Contact]) -> [ContactCellViewModel]
     private let service: ContactLoaderService
     private let view: ContactListView
 
     init(
         service: ContactLoaderService,
-        view: ContactListView,
-        mapper: @escaping ([Contact]) -> [ContactCellViewModel]
+        view: ContactListView
     ) {
-        self.mapper = mapper
         self.service = service
         self.view = view
     }
@@ -27,7 +24,14 @@ final class ContactsTableViewPresenter {
     func loadContacts() {
         service.loadContacts { result in
             let contacts = (try? result.get()) ?? []
-            self.view.display(self.mapper(contacts))
+            self.view.display(contacts.map { $0.toCellViewModel() })
         }
+    }
+}
+
+private extension Contact {
+
+    func toCellViewModel() -> ContactCellViewModel {
+        ContactCellViewModel(name: name, contactMethod: contactMethod)
     }
 }

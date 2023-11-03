@@ -28,21 +28,9 @@ final class ContactsTableViewPresenterTests: XCTestCase {
         XCTAssertEqual(view.displayedContacts, [])
     }
 
-    func test_mapper_receives_contacts_from_successful_loadContacts_request() {
-        var receivedContacts: [Contact]?
-        let expectation = XCTestExpectation()
-        _ = makeSUT { contacts in
-            receivedContacts = contacts
-            expectation.fulfill()
-            return []
-        }
-        wait(for: [expectation], timeout: 0.1)
-        XCTAssertEqual(receivedContacts, Contact.dummyData)
-    }
-
     func test_display_correct_contact_list_when_loadContacts_request_succeeds() {
         let view = ContactListViewSpy()
-        _ = makeSUT(view: view) { _ in ContactCellViewModel.dummyData }
+        _ = makeSUT(view: view)
         XCTAssertEqual(view.displayedContacts, ContactCellViewModel.dummyData)
     }
 
@@ -52,10 +40,9 @@ final class ContactsTableViewPresenterTests: XCTestCase {
         service: ContactLoaderServiceMock = ContactLoaderServiceMock(),
         view: ContactListViewSpy = ContactListViewSpy(),
         file: StaticString = #filePath,
-        line: UInt = #line,
-        mapper: @escaping ([Contact]) -> [ContactCellViewModel] = { _ in [] }
+        line: UInt = #line
     ) -> ContactsTableViewPresenter {
-        let sut = ContactsTableViewPresenter(service: service, view: view, mapper: mapper)
+        let sut = ContactsTableViewPresenter(service: service, view: view)
         sut.loadContacts()
         checkForMemoryLeak(on: service, file: file, line: line)
         checkForMemoryLeak(on: sut, file: file, line: line)
