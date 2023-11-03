@@ -11,12 +11,16 @@ import Foundation
 final class ContactService {
 
     private let csvReader: CSVReading
+    private let filePath: String
 
-    init(csvReader: CSVReading) {
+    init(csvReader: CSVReading, filePath: String) {
         self.csvReader = csvReader
+        self.filePath = filePath
     }
 
     func loadContacts() {
-        csvReader.open(path: "")
+        csvReader.open(path: filePath)
+    }
+}
     }
 }
