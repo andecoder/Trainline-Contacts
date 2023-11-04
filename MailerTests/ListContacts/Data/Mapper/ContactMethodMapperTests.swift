@@ -17,4 +17,10 @@ final class ContactMethodMapperTests: XCTestCase {
         let method = sut.map(address: "An address|in|Czech Republic")
         XCTAssertEqual(method, .email)
     }
+
+    func test_map_returns_email_when_country_is_saint_lucia() {
+        let sut = ContactMethodMapper()
+        let method = sut.map(address: "An address|in|Saint Lucia")
+        XCTAssertEqual(method, .email)
+    }
 }
