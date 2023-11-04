@@ -21,6 +21,8 @@
 		67AAE8422AF70427002FC16D /* ContactMethodMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8412AF70427002FC16D /* ContactMethodMapper.swift */; };
 		67AAE8452AF70467002FC16D /* ContactMethodMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8442AF70467002FC16D /* ContactMethodMapperTests.swift */; };
 		67AAE8482AF704EF002FC16D /* ContactMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8472AF704EF002FC16D /* ContactMethod.swift */; };
+		67AAE84E2AF709B5002FC16D /* FilePathContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE84D2AF709B5002FC16D /* FilePathContactRepository.swift */; };
+		67AAE8512AF70A31002FC16D /* FilePathContactRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8502AF70A31002FC16D /* FilePathContactRepositoryTests.swift */; };
 		67C2BFD82AF0B9B7002FA8C9 /* ContactsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2BFD72AF0B9B7002FA8C9 /* ContactsTableViewControllerTests.swift */; };
 		67C2BFDA2AF0BBDB002FA8C9 /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2BFD92AF0BBDB002FA8C9 /* ContactCellViewModel.swift */; };
 		67C2BFDD2AF0BF48002FA8C9 /* ContactCellViewModel+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2BFDC2AF0BF48002FA8C9 /* ContactCellViewModel+Data.swift */; };
@@ -65,6 +67,8 @@
 		67AAE8412AF70427002FC16D /* ContactMethodMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodMapper.swift; sourceTree = "<group>"; };
 		67AAE8442AF70467002FC16D /* ContactMethodMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodMapperTests.swift; sourceTree = "<group>"; };
 		67AAE8472AF704EF002FC16D /* ContactMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethod.swift; sourceTree = "<group>"; };
+		67AAE84D2AF709B5002FC16D /* FilePathContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePathContactRepository.swift; sourceTree = "<group>"; };
+		67AAE8502AF70A31002FC16D /* FilePathContactRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePathContactRepositoryTests.swift; sourceTree = "<group>"; };
 		67C2BFD72AF0B9B7002FA8C9 /* ContactsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		67C2BFD92AF0BBDB002FA8C9 /* ContactCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
 		67C2BFDC2AF0BF48002FA8C9 /* ContactCellViewModel+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactCellViewModel+Data.swift"; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				67AAE8462AF704E9002FC16D /* Model */,
 				67AAE8402AF70417002FC16D /* Mapper */,
 				67AAE83E2AF5BA01002FC16D /* Service */,
+				67AAE84C2AF709A5002FC16D /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			children = (
 				67AAE8432AF70459002FC16D /* Mapper */,
 				67AAE83F2AF5BA0B002FC16D /* Service */,
+				67AAE84F2AF709FE002FC16D /* Repository */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -180,6 +186,22 @@
 				67AAE8472AF704EF002FC16D /* ContactMethod.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		67AAE84C2AF709A5002FC16D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				67AAE84D2AF709B5002FC16D /* FilePathContactRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		67AAE84F2AF709FE002FC16D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				67AAE8502AF70A31002FC16D /* FilePathContactRepositoryTests.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		67C2BFDB2AF0BF2F002FA8C9 /* Helpers */ = {
@@ -523,6 +545,7 @@
 				67AAE83D2AF5B8AE002FC16D /* ContactServiceTests.swift in Sources */,
 				67C2BFD82AF0B9B7002FA8C9 /* ContactsTableViewControllerTests.swift in Sources */,
 				67C2C0052AF3F553002FA8C9 /* Contact+Data.swift in Sources */,
+				67AAE8512AF70A31002FC16D /* FilePathContactRepositoryTests.swift in Sources */,
 				67C2BFDD2AF0BF48002FA8C9 /* ContactCellViewModel+Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +561,7 @@
 				67AAE83A2AF5B887002FC16D /* ContactService.swift in Sources */,
 				67C2C0002AF3EACB002FA8C9 /* ContactListView.swift in Sources */,
 				67C2BFF52AF0C900002FA8C9 /* ContactLoaderService.swift in Sources */,
+				67AAE84E2AF709B5002FC16D /* FilePathContactRepository.swift in Sources */,
 				0C79247921F71ACF00C7E3C2 /* CSVWriter.swift in Sources */,
 				67C2BFFC2AF3DE8F002FA8C9 /* LoadContactsUseCase.swift in Sources */,
 				67AAE8422AF70427002FC16D /* ContactMethodMapper.swift in Sources */,
