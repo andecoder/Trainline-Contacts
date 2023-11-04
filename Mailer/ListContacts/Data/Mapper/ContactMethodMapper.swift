@@ -9,10 +9,15 @@
 import Foundation
 
 struct ContactMethodMapper {
+    private let mapping: [String: ContactMethod] = [
+        "Czech Republic": .email,
+        "Saint Lucia": .email,
+        "Italy": .post,
+        "Australia": .post
+    ]
+
     func map(address: String) -> ContactMethod {
-        if address.components(separatedBy: "|").last == "Italy" {
-            return .post
-        }
-        return .email
+        let country = address.components(separatedBy: "|").last!
+        return mapping[country]!
     }
 }
