@@ -12,13 +12,6 @@ import XCTest
 
 final class ContactServiceTests: XCTestCase {
 
-    func test_loadContacts_open_file() {
-        let reader = FakeCSVReader()
-        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
-        sut.loadContacts()
-        XCTAssertTrue(reader.openCalled)
-    }
-
     func test_loadContacts_opens_correct_file() {
         let reader = FakeCSVReader()
         let filePath = "somePathLocation"
@@ -29,7 +22,6 @@ final class ContactServiceTests: XCTestCase {
 
     private final class FakeCSVReader: NSObject, CSVReading {
 
-        private(set) var openCalled = false
         private(set) var openPathArg: String?
 
         func readNextRow() -> [Substring]? {
@@ -37,7 +29,6 @@ final class ContactServiceTests: XCTestCase {
         }
         
         func open(path: String) {
-            openCalled = true
             openPathArg = path
         }
         
