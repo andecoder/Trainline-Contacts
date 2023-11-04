@@ -41,4 +41,10 @@ final class ContactMethodMapperTests: XCTestCase {
         let method = sut.map(address: "An address|in|Finland")
         XCTAssertEqual(method, .post)
     }
+
+    func test_map_returns_sms_for_any_other_value() {
+        let sut = ContactMethodMapper()
+        let method = sut.map(address: "An invalid|Country")
+        XCTAssertEqual(method, .sms)
+    }
 }

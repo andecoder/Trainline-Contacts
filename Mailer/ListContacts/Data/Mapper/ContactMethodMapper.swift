@@ -18,7 +18,7 @@ struct ContactMethodMapper {
     ]
 
     func map(address: String) -> ContactMethod {
-        let country = address.components(separatedBy: "|").last!
-        return mapping[country]!
+        let country = address.components(separatedBy: "|").last ?? "Unknown"
+        return mapping[country, default: .sms]
     }
 }
