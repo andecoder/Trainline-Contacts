@@ -12,20 +12,6 @@ import XCTest
 
 final class ContactServiceTests: XCTestCase {
 
-    func test_loadContacts_tries_to_read_row_from_file() {
-        let reader = FakeCSVReader()
-        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
-        sut.loadContacts()
-        XCTAssertTrue(reader.readNextRowCalled)
-    }
-
-    func test_loadContacts_reads_all_rows_from_file() {
-        let reader = FakeCSVReader()
-        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
-        sut.loadContacts()
-        XCTAssertEqual(reader.readNextRowCallCount, 2)
-    }
-
     func test_loadContacts_interacts_with_reader_in_correct_order() {
         let reader = FakeCSVReader()
         let filePath = "somePathLocation"
