@@ -15,7 +15,7 @@ final class ContactServiceTests: XCTestCase {
     func test_loadContacts_interacts_with_reader_in_correct_order() {
         let reader = FakeCSVReader()
         let filePath = "somePathLocation"
-        let sut = ContactService(csvReader: reader, filePath: filePath)
+        let sut = ContactService(csvReader: reader, filePath: filePath, repository: FakeRepository())
         sut.loadContacts { _ in }
         let expectedInteractions: [FakeCSVReader.Interaction] = [
             .open(filePath), .readRow, .readRow, .close
@@ -26,7 +26,7 @@ final class ContactServiceTests: XCTestCase {
     func test_loadContacts_returns_empty_list_when_file_is_empty() {
         let reader = FakeCSVReader()
         reader.readNextRowReturn = []
-        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
+        let sut = ContactService(csvReader: reader, filePath: "DUMMY", repository: FakeRepository())
         var expectedContacts: [Contact]?
         sut.loadContacts() { expectedContacts = $0 }
         XCTAssertEqual(expectedContacts, [])
@@ -39,11 +39,13 @@ final class ContactServiceTests: XCTestCase {
             ["Velma Combs", "306 Rhoncus. St.|Czech Republic"],
             ["Porter Coffey", "Palo Alto|Cameroon"]
         ]
-        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
+        let sut = ContactService(csvReader: reader, filePath: "DUMMY", repository: FakeRepository())
         var expectedContacts: [Contact]?
         sut.loadContacts() { expectedContacts = $0 }
         XCTAssertEqual(expectedContacts, Contact.dummyData)
     }
+
+    // MARK: Helpers
 
     private final class FakeCSVReader: NSObject, CSVReading {
 
@@ -71,5 +73,9 @@ final class ContactServiceTests: XCTestCase {
         func close() {
             interactions.append(.close)
         }
+    }
+
+    final class FakeRepository: ContactRepository {
+        let contacts: [Contact] = []
     }
 }

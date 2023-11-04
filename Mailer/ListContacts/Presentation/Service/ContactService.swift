@@ -12,10 +12,12 @@ final class ContactService {
 
     private let csvReader: CSVReading
     private let filePath: String
+    private let repository: ContactRepository
 
-    init(csvReader: CSVReading, filePath: String) {
+    init(csvReader: CSVReading, filePath: String, repository: ContactRepository) {
         self.csvReader = csvReader
         self.filePath = filePath
+        self.repository = repository
     }
 
     func loadContacts(completion: @escaping ([Contact]) -> Void) {
