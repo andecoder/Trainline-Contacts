@@ -19,6 +19,7 @@ final class ContactService {
     }
 
     func loadContacts() {
+        csvReader.close()
         csvReader.open(path: filePath)
     }
 }
