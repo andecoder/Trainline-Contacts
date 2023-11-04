@@ -25,10 +25,24 @@ final class ContactServiceTests: XCTestCase {
 
     func test_loadContacts_returns_empty_list_when_file_is_empty() {
         let reader = FakeCSVReader()
+        reader.readNextRowReturn = []
         let sut = ContactService(csvReader: reader, filePath: "DUMMY")
         var expectedContacts: [Contact]?
         sut.loadContacts() { expectedContacts = $0 }
         XCTAssertEqual(expectedContacts, [])
+    }
+
+    func test_loadContacts_returns_correct_contacts() {
+        let reader = FakeCSVReader()
+        reader.readNextRowReturn = [
+            ["John Appleseed", "Hertfordshire|Finland"],
+            ["Velma Combs", "306 Rhoncus. St.|Czech Republic"],
+            ["Porter Coffey", "Palo Alto|Cameroon"]
+        ]
+        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
+        var expectedContacts: [Contact]?
+        sut.loadContacts() { expectedContacts = $0 }
+        XCTAssertEqual(expectedContacts, Contact.dummyData)
     }
 
     private final class FakeCSVReader: NSObject, CSVReading {
@@ -39,7 +53,7 @@ final class ContactServiceTests: XCTestCase {
         }
 
         private(set) var interactions: [Interaction] = []
-        private var readNextRowReturn: [[Substring]] = [["Name", "Address"]]
+        var readNextRowReturn: [[Substring]] = [["Name", "Address"]]
 
         func readNextRow() -> [Substring]? {
             interactions.append(.readRow)
