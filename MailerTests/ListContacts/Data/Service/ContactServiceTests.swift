@@ -16,11 +16,19 @@ final class ContactServiceTests: XCTestCase {
         let reader = FakeCSVReader()
         let filePath = "somePathLocation"
         let sut = ContactService(csvReader: reader, filePath: filePath)
-        sut.loadContacts()
+        sut.loadContacts { _ in }
         let expectedInteractions: [FakeCSVReader.Interaction] = [
             .open(filePath), .readRow, .readRow, .close
         ]
         XCTAssertEqual(reader.interactions, expectedInteractions)
+    }
+
+    func test_loadContacts_returns_empty_list_when_file_is_empty() {
+        let reader = FakeCSVReader()
+        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
+        var expectedContacts: [Contact]?
+        sut.loadContacts() { expectedContacts = $0 }
+        XCTAssertEqual(expectedContacts, [])
     }
 
     private final class FakeCSVReader: NSObject, CSVReading {

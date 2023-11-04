@@ -18,9 +18,10 @@ final class ContactService {
         self.filePath = filePath
     }
 
-    func loadContacts() {
+    func loadContacts(completion: @escaping ([Contact]) -> Void) {
         csvReader.open(path: filePath)
         while let _ = csvReader.readNextRow() { }
+        completion([])
         csvReader.close()
     }
 }
