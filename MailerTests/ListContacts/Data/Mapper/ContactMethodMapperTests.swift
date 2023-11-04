@@ -35,4 +35,10 @@ final class ContactMethodMapperTests: XCTestCase {
         let method = sut.map(address: "An address|in|Australia")
         XCTAssertEqual(method, .post)
     }
+
+    func test_map_returns_post_when_country_is_finland() {
+        let sut = ContactMethodMapper()
+        let method = sut.map(address: "An address|in|Finland")
+        XCTAssertEqual(method, .post)
+    }
 }

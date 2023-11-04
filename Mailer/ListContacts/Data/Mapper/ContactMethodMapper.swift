@@ -13,7 +13,8 @@ struct ContactMethodMapper {
         "Czech Republic": .email,
         "Saint Lucia": .email,
         "Italy": .post,
-        "Australia": .post
+        "Australia": .post,
+        "Finland": .post
     ]
 
     func map(address: String) -> ContactMethod {
