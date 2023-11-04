@@ -19,8 +19,8 @@ final class ContactService {
     }
 
     func loadContacts() {
-        while let _ = csvReader.readNextRow() { }
         csvReader.open(path: filePath)
+        while let _ = csvReader.readNextRow() { }
         csvReader.close()
     }
 }

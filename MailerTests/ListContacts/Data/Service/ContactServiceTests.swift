@@ -31,14 +31,17 @@ final class ContactServiceTests: XCTestCase {
         let filePath = "somePathLocation"
         let sut = ContactService(csvReader: reader, filePath: filePath)
         sut.loadContacts()
-        XCTAssertEqual(reader.interactions, [.open(filePath), .close])
+        let expectedInteractions: [FakeCSVReader.Interaction] = [
+            .open(filePath), .readRow, .readRow, .close
+        ]
+        XCTAssertEqual(reader.interactions, expectedInteractions)
     }
 
     private final class FakeCSVReader: NSObject, CSVReading {
 
         enum Interaction: Equatable {
             case open(String)
-            case close
+            case readRow, close
         }
 
         private(set) var interactions: [Interaction] = []
@@ -47,6 +50,7 @@ final class ContactServiceTests: XCTestCase {
         private var readNextRowReturn: [[Substring]] = [["Name", "Address"]]
 
         func readNextRow() -> [Substring]? {
+            interactions.append(.readRow)
             readNextRowCalled = true
             readNextRowCallCount += 1
             if readNextRowReturn.isEmpty {
