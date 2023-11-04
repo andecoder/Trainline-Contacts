@@ -39,14 +39,10 @@ final class ContactServiceTests: XCTestCase {
         }
 
         private(set) var interactions: [Interaction] = []
-        private(set) var readNextRowCalled = false
-        private(set) var readNextRowCallCount = 0
         private var readNextRowReturn: [[Substring]] = [["Name", "Address"]]
 
         func readNextRow() -> [Substring]? {
             interactions.append(.readRow)
-            readNextRowCalled = true
-            readNextRowCallCount += 1
             if readNextRowReturn.isEmpty {
                 return nil
             } else {
