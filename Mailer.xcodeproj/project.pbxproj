@@ -133,8 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				67AAE8462AF704E9002FC16D /* Model */,
-				67AAE8402AF70417002FC16D /* Mapper */,
-				67AAE83E2AF5BA01002FC16D /* Service */,
 				67AAE84C2AF709A5002FC16D /* Repository */,
 			);
 			path = Data;
@@ -143,8 +141,6 @@
 		67AAE83B2AF5B8A0002FC16D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				67AAE8432AF70459002FC16D /* Mapper */,
-				67AAE83F2AF5BA0B002FC16D /* Service */,
 				67AAE84F2AF709FE002FC16D /* Repository */,
 			);
 			path = Data;
@@ -238,8 +234,10 @@
 		67C2BFE12AF0C28D002FA8C9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				67AAE8402AF70417002FC16D /* Mapper */,
 				67C2BFE32AF0C2B2002FA8C9 /* Model */,
 				67C2BFEF2AF0C800002FA8C9 /* Presenter */,
+				67AAE83E2AF5BA01002FC16D /* Service */,
 				67C2BFFE2AF3EAB2002FA8C9 /* View */,
 			);
 			path = Presentation;
@@ -314,7 +312,9 @@
 		67C2BFEA2AF0C30B002FA8C9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				67AAE8432AF70459002FC16D /* Mapper */,
 				67C2BFEC2AF0C6E9002FA8C9 /* Presenter */,
+				67AAE83F2AF5BA0B002FC16D /* Service */,
 				67C2BFE92AF0C2FF002FA8C9 /* View */,
 			);
 			path = Presentation;
