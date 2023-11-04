@@ -19,6 +19,13 @@ final class ContactServiceTests: XCTestCase {
         XCTAssertTrue(reader.readNextRowCalled)
     }
 
+    func test_loadContacts_reads_all_rows_from_file() {
+        let reader = FakeCSVReader()
+        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
+        sut.loadContacts()
+        XCTAssertEqual(reader.readNextRowCallCount, 2)
+    }
+
     func test_loadContacts_interacts_with_reader_in_correct_order() {
         let reader = FakeCSVReader()
         let filePath = "somePathLocation"
@@ -36,10 +43,17 @@ final class ContactServiceTests: XCTestCase {
 
         private(set) var interactions: [Interaction] = []
         private(set) var readNextRowCalled = false
+        private(set) var readNextRowCallCount = 0
+        private var readNextRowReturn: [[Substring]] = [["Name", "Address"]]
 
         func readNextRow() -> [Substring]? {
             readNextRowCalled = true
-            return nil
+            readNextRowCallCount += 1
+            if readNextRowReturn.isEmpty {
+                return nil
+            } else {
+                return readNextRowReturn.removeFirst()
+            }
         }
         
         func open(path: String) {
