@@ -12,21 +12,6 @@ import XCTest
 
 final class ContactServiceTests: XCTestCase {
 
-    func test_loadContacts_opens_correct_file() {
-        let reader = FakeCSVReader()
-        let filePath = "somePathLocation"
-        let sut = ContactService(csvReader: reader, filePath: filePath)
-        sut.loadContacts()
-        XCTAssertEqual(reader.openPathArg, filePath)
-    }
-
-    func test_loadContacts_closes_file_when_finished() {
-        let reader = FakeCSVReader()
-        let sut = ContactService(csvReader: reader, filePath: "DUMMY")
-        sut.loadContacts()
-        XCTAssertTrue(reader.closeCalled)
-    }
-
     func test_loadContacts_interacts_with_reader_in_correct_order() {
         let reader = FakeCSVReader()
         let filePath = "somePathLocation"
@@ -42,9 +27,7 @@ final class ContactServiceTests: XCTestCase {
             case close
         }
 
-        private(set) var closeCalled = false
         private(set) var interactions: [Interaction] = []
-        private(set) var openPathArg: String?
 
         func readNextRow() -> [Substring]? {
             nil
@@ -52,12 +35,10 @@ final class ContactServiceTests: XCTestCase {
         
         func open(path: String) {
             interactions.append(.open(path))
-            openPathArg = path
         }
         
         func close() {
             interactions.append(.close)
-            closeCalled = true
         }
     }
 }
