@@ -33,22 +33,6 @@ final class ContactsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(useCase.loadContactsCount, 1)
     }
 
-    func test_notifies_when_cell_selected() {
-        var didCallClosure = false
-        let sut = makeSUT { _ in didCallClosure = true }
-        sut.display(ContactCellViewModel.dummyData)
-        sut.selectCell(atIndex: 1)
-        XCTAssertTrue(didCallClosure)
-    }
-
-    func test_ensure_closure_is_only_called_once() {
-        var closureCallCount = 0
-        let sut = makeSUT { _ in closureCallCount += 1 }
-        sut.display(ContactCellViewModel.dummyData)
-        sut.selectCell(atIndex: 1)
-        XCTAssertEqual(closureCallCount, 1)
-    }
-
     func test_closure_receives_viewModel_of_selected_cell() {
         var receivedViewModels: [ContactCellViewModel] = []
         let sut = makeSUT { receivedViewModels.append($0) }
