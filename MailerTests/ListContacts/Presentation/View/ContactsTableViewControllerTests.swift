@@ -33,14 +33,23 @@ final class ContactsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(useCase.loadContactsCount, 1)
     }
 
+    func test_notifies_when_cell_selected() {
+        var didCallClosure = false
+        let sut = makeSUT { didCallClosure = true }
+        sut.display(ContactCellViewModel.dummyData)
+        sut.selectCell(atIndex: 1)
+        XCTAssertTrue(didCallClosure)
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
         useCase: LoadContactsUseCase = LoadContactsUseCaseSpy(),
         file: StaticString = #filePath,
-        line: UInt = #line
+        line: UInt = #line,
+        didSelect: @escaping () -> Void = { }
     ) -> ContactsTableViewController {
-        let sut = ContactsTableViewController(useCase: useCase)
+        let sut = ContactsTableViewController(useCase: useCase, didSelect: didSelect)
         checkForMemoryLeak(on: sut, file: file, line: line)
         return sut
     }
@@ -65,6 +74,10 @@ private extension ContactsTableViewController {
         contacts.enumerated().forEach { (index, contact) in
             isDisplaying(contact, atIndex: index, file: file, line: line)
         }
+    }
+
+    func selectCell(atIndex index: Int) {
+        tableView(tableView, didSelectRowAt: IndexPath(row: index, section: 0))
     }
 
     private func isDisplaying(_ contact: ContactCellViewModel, atIndex index: Int, file: StaticString, line: UInt) {
