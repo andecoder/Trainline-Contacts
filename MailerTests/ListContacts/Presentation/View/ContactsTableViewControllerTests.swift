@@ -41,6 +41,14 @@ final class ContactsTableViewControllerTests: XCTestCase {
         XCTAssertTrue(didCallClosure)
     }
 
+    func test_ensure_closure_is_only_called_once() {
+        var closureCallCount = 0
+        let sut = makeSUT { closureCallCount += 1 }
+        sut.display(ContactCellViewModel.dummyData)
+        sut.selectCell(atIndex: 1)
+        XCTAssertEqual(closureCallCount, 1)
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
