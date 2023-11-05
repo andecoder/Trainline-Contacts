@@ -13,31 +13,31 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let fakeUseCase = LoadContactsFakeUseCase()
-        let viewController = ContactsTableViewController(useCase: fakeUseCase)
-
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.prefersLargeTitles = true
-        
         window = UIWindow()
-        window?.rootViewController = navigationController
+        window?.rootViewController = makeInitialViewController()
         window?.makeKeyAndVisible()
-        
-        
-        // TODO: Remove me
-        let path = Bundle.main.path(forResource: "Contacts", ofType: "csv")!
-        let reader = CSVReader()
-        reader.open(path: path)
-        while let row = reader.readNextRow() {
-            print(row)
-        }
 
         return true
     }
 
-    private final class LoadContactsFakeUseCase: LoadContactsUseCase {
+    private func makeInitialViewController() -> UIViewController {
+        let viewController = makeContactListViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        return navigationController
+    }
 
-        func loadContacts() { }
+    private func makeContactListViewController() -> UIViewController {
+        let viewProxy = WeakRefProxy<ContactsTableViewController>()
+        let mapper = ContactMethodMapper()
+        let repository = FilePathContactRepository(
+            csvReader: CSVReader(),
+            filePath: Bundle.main.path(forResource: "Contacts", ofType: "csv")!,
+            mapper: mapper.map(address:)
+        )
+        let presenter = ContactsTableViewPresenter(service: ContactService(repository: repository), view: viewProxy)
+        let viewController = ContactsTableViewController(useCase: presenter)
+        viewProxy.wrap(viewController)
+        return viewController
     }
 }

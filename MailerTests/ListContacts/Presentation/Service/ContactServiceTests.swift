@@ -12,11 +12,11 @@ import XCTest
 
 final class ContactServiceTests: XCTestCase {
 
-    func test_loadContacts_returns_correct_contacts() {
+    func test_loadContacts_returns_correct_contacts() throws {
         let sut = ContactService(repository: FakeRepository())
-        var expectedContacts: [Contact]?
-        sut.loadContacts() { expectedContacts = $0 }
-        XCTAssertEqual(expectedContacts, Contact.dummyData)
+        var receivedResult: Result<[Contact], Error>?
+        sut.loadContacts() { receivedResult = $0 }
+        XCTAssertEqual(try receivedResult?.get(), Contact.dummyData)
     }
 
     // MARK: Helpers

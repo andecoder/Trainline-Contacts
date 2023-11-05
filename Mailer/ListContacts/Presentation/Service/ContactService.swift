@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ContactService {
+final class ContactService: ContactLoaderService {
 
     private let repository: ContactRepository
 
@@ -16,8 +16,8 @@ final class ContactService {
         self.repository = repository
     }
 
-    func loadContacts(completion: @escaping ([Contact]) -> Void) {
+    func loadContacts(completion: @escaping (Result<[Contact], Error>) -> Void) {
         let contacts = repository.contacts
-        completion(contacts)
+        completion(.success(contacts))
     }
 }

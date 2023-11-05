@@ -35,6 +35,7 @@
 		67C2C0032AF3EE6A002FA8C9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2C0022AF3EE6A002FA8C9 /* Contact.swift */; };
 		67C2C0052AF3F553002FA8C9 /* Contact+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2C0042AF3F553002FA8C9 /* Contact+Data.swift */; };
 		67C2C0072AF3F862002FA8C9 /* XCTestCase+MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2C0062AF3F862002FA8C9 /* XCTestCase+MemoryLeak.swift */; };
+		67C2C00A2AF3FC53002FA8C9 /* WeakRefProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2C0092AF3FC53002FA8C9 /* WeakRefProxy.swift */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
 		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
@@ -82,6 +83,7 @@
 		67C2C0022AF3EE6A002FA8C9 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		67C2C0042AF3F553002FA8C9 /* Contact+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+Data.swift"; sourceTree = "<group>"; };
 		67C2C0062AF3F862002FA8C9 /* XCTestCase+MemoryLeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeak.swift"; sourceTree = "<group>"; };
+		67C2C0092AF3FC53002FA8C9 /* WeakRefProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefProxy.swift; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 		67C2BFFD2AF3EAA1002FA8C9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				67C2C0082AF3FC46002FA8C9 /* Mapper */,
 				67C2BFE22AF0C2A5002FA8C9 /* View */,
 			);
 			path = UI;
@@ -393,6 +396,14 @@
 				67C2C0022AF3EE6A002FA8C9 /* Contact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		67C2C0082AF3FC46002FA8C9 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				67C2C0092AF3FC53002FA8C9 /* WeakRefProxy.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		9A3AB26B1F57699C00C822CF = {
@@ -570,6 +581,7 @@
 				67C2C0032AF3EE6A002FA8C9 /* Contact.swift in Sources */,
 				1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */,
 				67AAE83A2AF5B887002FC16D /* ContactService.swift in Sources */,
+				67C2C00A2AF3FC53002FA8C9 /* WeakRefProxy.swift in Sources */,
 				67C2C0002AF3EACB002FA8C9 /* ContactListView.swift in Sources */,
 				67C2BFF52AF0C900002FA8C9 /* ContactLoaderService.swift in Sources */,
 				67AAE84E2AF709B5002FC16D /* FilePathContactRepository.swift in Sources */,

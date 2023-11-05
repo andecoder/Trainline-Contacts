@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ContactsTableViewController: UITableViewController {
+final class ContactsTableViewController: UITableViewController, ContactListView {
     
     private let cellIdentifier = "ContactsTableViewCell"
 

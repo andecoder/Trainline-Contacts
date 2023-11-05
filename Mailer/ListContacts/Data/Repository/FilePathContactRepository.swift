@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class FilePathContactRepository {
+final class FilePathContactRepository: ContactRepository {
     
     private let csvReader: CSVReading
     private let filePath: String
