@@ -32,6 +32,6 @@ final class ContactsTableViewPresenter: LoadContactsUseCase {
 private extension Contact {
 
     func toCellViewModel() -> ContactCellViewModel {
-        ContactCellViewModel(name: name, contactMethod: contactMethod)
+        ContactCellViewModel(name: name, contactMethod: contactMethod.rawValue)
     }
 }

@@ -26,7 +26,7 @@ final class FilePathContactRepository: ContactRepository {
         while let row = csvReader.readNextRow() {
             let contact = Contact(
                 name: String(row[0]),
-                contactMethod: mapper(String(row[1])).rawValue
+                contactMethod: mapper(String(row[1]))
             )
             contacts.append(contact)
         }

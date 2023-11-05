@@ -14,7 +14,7 @@ extension ContactCellViewModel {
    
     static let dummyData: [ContactCellViewModel] = [
         ContactCellViewModel(name: "John Appleseed", contactMethod: "Post"),
-        ContactCellViewModel(name: "Velma Combs", contactMethod: "e-Mail"),
+        ContactCellViewModel(name: "Velma Combs", contactMethod: "e-mail"),
         ContactCellViewModel(name: "Porter Coffey", contactMethod: "SMS")
     ]
 }

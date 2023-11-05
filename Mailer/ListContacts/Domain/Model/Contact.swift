@@ -10,5 +10,5 @@ import Foundation
 
 struct Contact {
     let name: String
-    let contactMethod: String
+    let contactMethod: ContactMethod
 }

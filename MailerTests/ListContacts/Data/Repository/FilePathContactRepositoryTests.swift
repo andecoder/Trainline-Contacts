@@ -46,7 +46,7 @@ final class FilePathContactRepositoryTests: XCTestCase {
             ["John Appleseed", "Hertfordshire|Finland"]
         ])
         let sut = makeSUT(reader: reader)
-        let expectedContact = Contact(name: "John Appleseed", contactMethod: "SMS")
+        let expectedContact = Contact(name: "John Appleseed", contactMethod: .sms)
         XCTAssertEqual(sut.contacts, [expectedContact])
     }
 

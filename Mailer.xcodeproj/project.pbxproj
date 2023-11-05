@@ -134,7 +134,6 @@
 		67AAE8382AF5B85E002FC16D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				67AAE8462AF704E9002FC16D /* Model */,
 				67AAE84C2AF709A5002FC16D /* Repository */,
 			);
 			path = Data;
@@ -178,14 +177,6 @@
 				67AAE8442AF70467002FC16D /* ContactMethodMapperTests.swift */,
 			);
 			path = Mapper;
-			sourceTree = "<group>";
-		};
-		67AAE8462AF704E9002FC16D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				67AAE8472AF704EF002FC16D /* ContactMethod.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		67AAE8492AF7093F002FC16D /* Repository */ = {
@@ -394,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				67C2C0022AF3EE6A002FA8C9 /* Contact.swift */,
+				67AAE8472AF704EF002FC16D /* ContactMethod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

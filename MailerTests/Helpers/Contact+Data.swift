@@ -12,9 +12,9 @@ import Foundation
 
 extension Contact {
     static let dummyData: [Contact] = [
-        Contact(name: "John Appleseed", contactMethod: "Post"),
-        Contact(name: "Velma Combs", contactMethod: "e-Mail"),
-        Contact(name: "Porter Coffey", contactMethod: "SMS")
+        Contact(name: "John Appleseed", contactMethod: .post),
+        Contact(name: "Velma Combs", contactMethod: .email),
+        Contact(name: "Porter Coffey", contactMethod: .sms)
     ]
 }
 
