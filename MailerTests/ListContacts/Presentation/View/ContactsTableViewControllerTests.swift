@@ -35,7 +35,7 @@ final class ContactsTableViewControllerTests: XCTestCase {
 
     func test_notifies_when_cell_selected() {
         var didCallClosure = false
-        let sut = makeSUT { didCallClosure = true }
+        let sut = makeSUT { _ in didCallClosure = true }
         sut.display(ContactCellViewModel.dummyData)
         sut.selectCell(atIndex: 1)
         XCTAssertTrue(didCallClosure)
@@ -43,10 +43,19 @@ final class ContactsTableViewControllerTests: XCTestCase {
 
     func test_ensure_closure_is_only_called_once() {
         var closureCallCount = 0
-        let sut = makeSUT { closureCallCount += 1 }
+        let sut = makeSUT { _ in closureCallCount += 1 }
         sut.display(ContactCellViewModel.dummyData)
         sut.selectCell(atIndex: 1)
         XCTAssertEqual(closureCallCount, 1)
+    }
+
+    func test_closure_receives_viewModel_of_selected_cell() {
+        var receivedViewModels: [ContactCellViewModel] = []
+        let sut = makeSUT { receivedViewModels.append($0) }
+        sut.display(ContactCellViewModel.dummyData)
+        sut.selectCell(atIndex: 1)
+        let expectedViewModel = ContactCellViewModel(name: "Velma Combs", contactMethod: "e-mail")
+        XCTAssertEqual(receivedViewModels, [expectedViewModel])
     }
 
     // MARK: Helpers
@@ -55,7 +64,7 @@ final class ContactsTableViewControllerTests: XCTestCase {
         useCase: LoadContactsUseCase = LoadContactsUseCaseSpy(),
         file: StaticString = #filePath,
         line: UInt = #line,
-        didSelect: @escaping () -> Void = { }
+        didSelect: @escaping (ContactCellViewModel) -> Void = { _ in }
     ) -> ContactsTableViewController {
         let sut = ContactsTableViewController(useCase: useCase, didSelect: didSelect)
         checkForMemoryLeak(on: sut, file: file, line: line)

@@ -36,7 +36,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             mapper: mapper.map(address:)
         )
         let presenter = ContactsTableViewPresenter(service: ContactService(repository: repository), view: viewProxy)
-        let viewController = ContactsTableViewController(useCase: presenter) { }
+        let viewController = ContactsTableViewController(useCase: presenter) { _ in }
         viewProxy.wrap(viewController)
         return viewController
     }

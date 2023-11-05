@@ -12,11 +12,11 @@ final class ContactsTableViewController: UITableViewController, ContactListView 
     private let cellIdentifier = "ContactsTableViewCell"
 
     private let useCase: LoadContactsUseCase
-    private let didSelect: () -> Void
+    private let didSelect: (ContactCellViewModel) -> Void
 
     private var contacts: [ContactCellViewModel] = []
 
-    init(useCase: LoadContactsUseCase, didSelect: @escaping () -> Void) {
+    init(useCase: LoadContactsUseCase, didSelect: @escaping (ContactCellViewModel) -> Void) {
         self.didSelect = didSelect
         self.useCase = useCase
         super.init(nibName: nil, bundle: nil)
@@ -55,7 +55,8 @@ final class ContactsTableViewController: UITableViewController, ContactListView 
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelect()
+        let viewModel = contacts[indexPath.row]
+        didSelect(viewModel)
     }
 
     func display(_ contacts: [ContactCellViewModel]) {
