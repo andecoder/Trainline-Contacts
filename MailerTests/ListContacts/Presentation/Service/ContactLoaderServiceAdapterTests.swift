@@ -1,5 +1,5 @@
 //
-//  ContactServiceTests.swift
+//  ContactLoaderServiceAdapterTests.swift
 //  MailerTests
 //
 //  Created by Anderson Costa on 03/11/2023.
@@ -10,10 +10,10 @@ import XCTest
 
 @testable import Mailer
 
-final class ContactServiceTests: XCTestCase {
+final class ContactLoaderServiceAdapterTests: XCTestCase {
 
     func test_loadContacts_returns_correct_contacts() throws {
-        let sut = ContactService(repository: FakeRepository())
+        let sut = ContactLoaderServiceAdapter(repository: FakeRepository())
         var receivedResult: Result<[Contact], Error>?
         sut.loadContacts() { receivedResult = $0 }
         XCTAssertEqual(try receivedResult?.get(), Contact.dummyData)

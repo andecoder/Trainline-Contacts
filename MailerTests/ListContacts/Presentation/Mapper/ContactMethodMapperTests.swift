@@ -13,38 +13,32 @@ import XCTest
 final class ContactMethodMapperTests: XCTestCase {
 
     func test_map_returns_email_when_country_is_czech_republic() {
-        let sut = ContactMethodMapper()
-        let method = sut.map(address: "An address|in|Czech Republic")
+        let method = ContactMethodMapper.map(address: "An address|in|Czech Republic")
         XCTAssertEqual(method, .email)
     }
 
     func test_map_returns_email_when_country_is_saint_lucia() {
-        let sut = ContactMethodMapper()
-        let method = sut.map(address: "An address|in|Saint Lucia")
+        let method = ContactMethodMapper.map(address: "An address|in|Saint Lucia")
         XCTAssertEqual(method, .email)
     }
 
     func test_map_returns_post_when_country_is_italy() {
-        let sut = ContactMethodMapper()
-        let method = sut.map(address: "An address|in|Italy")
+        let method = ContactMethodMapper.map(address: "An address|in|Italy")
         XCTAssertEqual(method, .post)
     }
 
     func test_map_returns_post_when_country_is_australia() {
-        let sut = ContactMethodMapper()
-        let method = sut.map(address: "An address|in|Australia")
+        let method = ContactMethodMapper.map(address: "An address|in|Australia")
         XCTAssertEqual(method, .post)
     }
 
     func test_map_returns_post_when_country_is_finland() {
-        let sut = ContactMethodMapper()
-        let method = sut.map(address: "An address|in|Finland")
+        let method = ContactMethodMapper.map(address: "An address|in|Finland")
         XCTAssertEqual(method, .post)
     }
 
     func test_map_returns_sms_for_any_other_value() {
-        let sut = ContactMethodMapper()
-        let method = sut.map(address: "An invalid|Country")
+        let method = ContactMethodMapper.map(address: "An invalid|Country")
         XCTAssertEqual(method, .sms)
     }
 }

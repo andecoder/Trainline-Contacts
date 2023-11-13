@@ -16,8 +16,9 @@
 		0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247721F71ACF00C7E3C2 /* CSVReader.swift */; };
 		1B0085D624192A9100143B22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B0085D524192A9100143B22 /* README.md */; };
 		1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */; };
-		67AAE83A2AF5B887002FC16D /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8392AF5B887002FC16D /* ContactService.swift */; };
-		67AAE83D2AF5B8AE002FC16D /* ContactServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE83C2AF5B8AE002FC16D /* ContactServiceTests.swift */; };
+		6750B8602B01A6D800C2C293 /* ContactsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */; };
+		67AAE83A2AF5B887002FC16D /* ContactLoaderServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */; };
+		67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */; };
 		67AAE8422AF70427002FC16D /* ContactMethodMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8412AF70427002FC16D /* ContactMethodMapper.swift */; };
 		67AAE8452AF70467002FC16D /* ContactMethodMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8442AF70467002FC16D /* ContactMethodMapperTests.swift */; };
 		67AAE8482AF704EF002FC16D /* ContactMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8472AF704EF002FC16D /* ContactMethod.swift */; };
@@ -64,8 +65,9 @@
 		1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		1B632782241938D1001943B8 /* MailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B632786241938D1001943B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67AAE8392AF5B887002FC16D /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
-		67AAE83C2AF5B8AE002FC16D /* ContactServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceTests.swift; sourceTree = "<group>"; };
+		6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUIComposer.swift; sourceTree = "<group>"; };
+		67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapter.swift; sourceTree = "<group>"; };
+		67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapterTests.swift; sourceTree = "<group>"; };
 		67AAE8412AF70427002FC16D /* ContactMethodMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodMapper.swift; sourceTree = "<group>"; };
 		67AAE8442AF70467002FC16D /* ContactMethodMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodMapperTests.swift; sourceTree = "<group>"; };
 		67AAE8472AF704EF002FC16D /* ContactMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethod.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 		67AAE83E2AF5BA01002FC16D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				67AAE8392AF5B887002FC16D /* ContactService.swift */,
+				67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -158,7 +160,7 @@
 		67AAE83F2AF5BA0B002FC16D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				67AAE83C2AF5B8AE002FC16D /* ContactServiceTests.swift */,
+				67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -369,6 +371,7 @@
 			children = (
 				67C2C0082AF3FC46002FA8C9 /* Mapper */,
 				67C2BFE22AF0C2A5002FA8C9 /* View */,
+				6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -556,7 +559,7 @@
 				67AAE8452AF70467002FC16D /* ContactMethodMapperTests.swift in Sources */,
 				67C2C0072AF3F862002FA8C9 /* XCTestCase+MemoryLeak.swift in Sources */,
 				67C2BFEE2AF0C723002FA8C9 /* ContactsTableViewPresenterTests.swift in Sources */,
-				67AAE83D2AF5B8AE002FC16D /* ContactServiceTests.swift in Sources */,
+				67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */,
 				67C2BFD82AF0B9B7002FA8C9 /* ContactsTableViewControllerTests.swift in Sources */,
 				67C2C0052AF3F553002FA8C9 /* Contact+Data.swift in Sources */,
 				67AAE8512AF70A31002FC16D /* FilePathContactRepositoryTests.swift in Sources */,
@@ -568,11 +571,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6750B8602B01A6D800C2C293 /* ContactsUIComposer.swift in Sources */,
 				0C79247C21F71ACF00C7E3C2 /* StreamClosable.swift in Sources */,
 				0C79247D21F71ACF00C7E3C2 /* CSVWriting.swift in Sources */,
 				67C2C0032AF3EE6A002FA8C9 /* Contact.swift in Sources */,
 				1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */,
-				67AAE83A2AF5B887002FC16D /* ContactService.swift in Sources */,
+				67AAE83A2AF5B887002FC16D /* ContactLoaderServiceAdapter.swift in Sources */,
 				67C2C00A2AF3FC53002FA8C9 /* WeakRefProxy.swift in Sources */,
 				67C2C0002AF3EACB002FA8C9 /* ContactListView.swift in Sources */,
 				67C2BFF52AF0C900002FA8C9 /* ContactLoaderService.swift in Sources */,

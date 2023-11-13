@@ -10,34 +10,33 @@ import UIKit
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private lazy var repository: ContactRepository = FilePathContactRepository(
+        csvReader: CSVReader(),
+        filePath: Bundle.main.path(forResource: "Contacts", ofType: "csv")!,
+        mapper: ContactMethodMapper.map
+    )
+
+    private lazy var navigationController: UINavigationController = {
+        let viewController = ContactsUIComposer.listComposedWith(repository: repository, selection: showContacts)
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.navigationBar.prefersLargeTitles = true
+        return navController
+    }()
+
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow()
-        window?.rootViewController = makeInitialViewController()
-        window?.makeKeyAndVisible()
+        configureWindow()
 
         return true
     }
 
-    private func makeInitialViewController() -> UIViewController {
-        let viewController = makeContactListViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.prefersLargeTitles = true
-        return navigationController
+    func configureWindow() {
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
-    private func makeContactListViewController() -> UIViewController {
-        let viewProxy = WeakRefProxy<ContactsTableViewController>()
-        let mapper = ContactMethodMapper()
-        let repository = FilePathContactRepository(
-            csvReader: CSVReader(),
-            filePath: Bundle.main.path(forResource: "Contacts", ofType: "csv")!,
-            mapper: mapper.map(address:)
-        )
-        let presenter = ContactsTableViewPresenter(service: ContactService(repository: repository), view: viewProxy)
-        let viewController = ContactsTableViewController(useCase: presenter) { _ in }
-        viewProxy.wrap(viewController)
-        return viewController
+    private func showContacts(for contactMethod: ContactMethod) {
     }
 }

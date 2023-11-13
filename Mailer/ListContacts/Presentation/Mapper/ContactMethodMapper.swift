@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ContactMethodMapper {
-    private let mapping: [String: ContactMethod] = [
+enum ContactMethodMapper {
+    private static let mapping: [String: ContactMethod] = [
         "Czech Republic": .email,
         "Saint Lucia": .email,
         "Italy": .post,
@@ -17,7 +17,7 @@ struct ContactMethodMapper {
         "Finland": .post
     ]
 
-    func map(address: String) -> ContactMethod {
+    static func map(address: String) -> ContactMethod {
         let country = address.components(separatedBy: "|").last ?? "Unknown"
         return mapping[country, default: .sms]
     }

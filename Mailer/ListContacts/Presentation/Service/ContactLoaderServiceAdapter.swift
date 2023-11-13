@@ -1,5 +1,5 @@
 //
-//  ContactService.swift
+//  ContactLoaderServiceAdapter.swift
 //  Mailer
 //
 //  Created by Anderson Costa on 03/11/2023.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ContactService: ContactLoaderService {
+final class ContactLoaderServiceAdapter: ContactLoaderService {
 
     private let repository: ContactRepository
 
