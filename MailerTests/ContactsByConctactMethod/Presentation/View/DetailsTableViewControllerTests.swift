@@ -29,7 +29,7 @@ final class DetailsTableViewControllerTests: XCTestCase {
 
     func test_display_zero_contacts_when_view_loads() {
         let sut = makeSUT()
-        XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
+        sut.hasNoContacts()
     }
 
     // MARK: Helpers
@@ -43,5 +43,16 @@ final class DetailsTableViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         checkForMemoryLeak(on: sut, file: file, line: line)
         return sut
+    }
+}
+
+private extension DetailsTableViewController {
+
+    func hasNoContacts(file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(
+            tableView(tableView, numberOfRowsInSection: 0), 0,
+            file: file,
+            line: line
+        )
     }
 }
