@@ -16,6 +16,7 @@
 		0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247721F71ACF00C7E3C2 /* CSVReader.swift */; };
 		1B0085D624192A9100143B22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B0085D524192A9100143B22 /* README.md */; };
 		1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */; };
+		6705242F2B05647F00081C4F /* DetailsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6705242E2B05647F00081C4F /* DetailsTableViewControllerTests.swift */; };
 		6750B8602B01A6D800C2C293 /* ContactsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */; };
 		67AAE83A2AF5B887002FC16D /* ContactLoaderServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */; };
 		67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */; };
@@ -65,6 +66,7 @@
 		1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		1B632782241938D1001943B8 /* MailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B632786241938D1001943B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6705242E2B05647F00081C4F /* DetailsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUIComposer.swift; sourceTree = "<group>"; };
 		67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapter.swift; sourceTree = "<group>"; };
 		67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapterTests.swift; sourceTree = "<group>"; };
@@ -126,11 +128,36 @@
 		1B632783241938D1001943B8 /* MailerTests */ = {
 			isa = PBXGroup;
 			children = (
+				6705242B2B05644A00081C4F /* ContactsByConctactMethod */,
 				67C2BFDB2AF0BF2F002FA8C9 /* Helpers */,
 				67C2BFE82AF0C2F6002FA8C9 /* ListContacts */,
 				67C2BFEB2AF0C31F002FA8C9 /* Supporting Files */,
 			);
 			path = MailerTests;
+			sourceTree = "<group>";
+		};
+		6705242B2B05644A00081C4F /* ContactsByConctactMethod */ = {
+			isa = PBXGroup;
+			children = (
+				6705242C2B05645F00081C4F /* Presentation */,
+			);
+			path = ContactsByConctactMethod;
+			sourceTree = "<group>";
+		};
+		6705242C2B05645F00081C4F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6705242D2B05646E00081C4F /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		6705242D2B05646E00081C4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6705242E2B05647F00081C4F /* DetailsTableViewControllerTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		67AAE8382AF5B85E002FC16D /* Data */ = {
@@ -557,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67AAE8452AF70467002FC16D /* ContactMethodMapperTests.swift in Sources */,
+				6705242F2B05647F00081C4F /* DetailsTableViewControllerTests.swift in Sources */,
 				67C2C0072AF3F862002FA8C9 /* XCTestCase+MemoryLeak.swift in Sources */,
 				67C2BFEE2AF0C723002FA8C9 /* ContactsTableViewPresenterTests.swift in Sources */,
 				67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */,
