@@ -27,6 +27,11 @@ final class DetailsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.title, "e-mail")
     }
 
+    func test_display_zero_contacts_when_view_loads() {
+        let sut = makeSUT()
+        XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 0)
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
