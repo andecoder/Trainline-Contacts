@@ -11,9 +11,24 @@ final class DetailsTableViewController: UITableViewController {
 
     private let cellIdentifier = "DetailsTableViewCell"
     
+    private let contactMethod: ContactMethod
+
+    init(contactMethod: ContactMethod) {
+        self.contactMethod = contactMethod
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
-        //TODO: Implement me
-        title = "Post"
+        if contactMethod == .post {
+            title = "Post"
+        } else {
+            title = "SMS"
+        }
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     

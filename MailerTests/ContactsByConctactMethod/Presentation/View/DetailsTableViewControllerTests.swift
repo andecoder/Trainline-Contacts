@@ -13,8 +13,14 @@ import XCTest
 final class DetailsTableViewControllerTests: XCTestCase {
 
     func test_title_is_correct_for_post() {
-        let sut = DetailsTableViewController()
+        let sut = DetailsTableViewController(contactMethod: .post)
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.title, "Post")
+    }
+
+    func test_title_is_correct_for_sms() {
+        let sut = DetailsTableViewController(contactMethod: .sms)
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.title, "SMS")
     }
 }
