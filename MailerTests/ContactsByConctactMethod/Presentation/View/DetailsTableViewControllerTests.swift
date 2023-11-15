@@ -23,4 +23,10 @@ final class DetailsTableViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.title, "SMS")
     }
+
+    func test_title_is_correct_for_email() {
+        let sut = DetailsTableViewController(contactMethod: .email)
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.title, "e-mail")
+    }
 }

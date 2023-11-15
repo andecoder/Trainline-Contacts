@@ -24,11 +24,7 @@ final class DetailsTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        if contactMethod == .post {
-            title = "Post"
-        } else {
-            title = "SMS"
-        }
+        title = contactMethod.rawValue
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
