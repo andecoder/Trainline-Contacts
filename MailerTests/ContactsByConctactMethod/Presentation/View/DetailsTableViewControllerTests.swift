@@ -27,6 +27,13 @@ final class DetailsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.title, "e-mail")
     }
 
+    func test_display_provided_title() {
+        let sut = makeSUT()
+        let title = "A custom title"
+        sut.setTitle(to: title)
+        sut.hasTitle(title)
+    }
+
     func test_display_zero_contacts_when_view_loads() {
         let sut = makeSUT()
         sut.hasNoContacts()
@@ -63,6 +70,10 @@ private extension DetailsTableViewController {
             file: file,
             line: line
         )
+    }
+
+    func hasTitle(_ title: String, file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertEqual(self.title, title, file: file, line: line)
     }
 
     func isDisplaying(_ contacts: [String], file: StaticString = #filePath, line: UInt = #line) {

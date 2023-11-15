@@ -46,4 +46,8 @@ final class DetailsTableViewController: UITableViewController {
     func display(_ contacts: [String]) {
         self.contacts = contacts
     }
+
+    func setTitle(to title: String) {
+        self.title = title
+    }
 }
