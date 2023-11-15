@@ -255,12 +255,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		67C2BFE42AF0C2C0002FA8C9 /* ContactDetail */ = {
+		67C2BFE42AF0C2C0002FA8C9 /* ContactsByContactMethod */ = {
 			isa = PBXGroup;
 			children = (
 				67C2BFE52AF0C2C8002FA8C9 /* Presentation */,
 			);
-			path = ContactDetail;
+			path = ContactsByContactMethod;
 			sourceTree = "<group>";
 		};
 		67C2BFE52AF0C2C8002FA8C9 /* Presentation */ = {
@@ -425,7 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				67C2BFE72AF0C2E8002FA8C9 /* Core */,
-				67C2BFE42AF0C2C0002FA8C9 /* ContactDetail */,
+				67C2BFE42AF0C2C0002FA8C9 /* ContactsByContactMethod */,
 				67C2BFE02AF0C270002FA8C9 /* ListContacts */,
 				9A3AB2771F57699C00C822CF /* AppDelegate.swift */,
 			);
