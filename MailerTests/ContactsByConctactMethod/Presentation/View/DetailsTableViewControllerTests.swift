@@ -34,9 +34,17 @@ final class DetailsTableViewControllerTests: XCTestCase {
 
     func test_has_same_rows_as_contacts_displayed() {
         let sut = makeSUT()
-        let contacts = ["Dummy", "Dummy", "Dummy"]
-        sut.display(contacts)
+        sut.display(["Dummy", "Dummy", "Dummy"])
         XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 3)
+    }
+
+    func test_rows_have_correct_text() {
+        let sut = makeSUT()
+        let contacts = [
+            "John Appleseed", "Velma Combs", "Porter Coffey"
+        ]
+        sut.display(contacts)
+        sut.isDisplaying(contacts)
     }
 
     // MARK: Helpers
@@ -61,5 +69,16 @@ private extension DetailsTableViewController {
             file: file,
             line: line
         )
+    }
+
+    func isDisplaying(_ contacts: [String], file: StaticString = #filePath, line: UInt = #line) {
+        contacts.enumerated().forEach { (index, contact) in
+            isDisplaying(contact, atIndex: index, file: file, line: line)
+        }
+    }
+
+    private func isDisplaying(_ contact: String, atIndex index: Int, file: StaticString, line: UInt) {
+        let row = tableView(tableView, cellForRowAt: IndexPath(row: index, section: 0))
+        XCTAssertEqual(row.textLabel?.text, contact, file: file, line: line)
     }
 }

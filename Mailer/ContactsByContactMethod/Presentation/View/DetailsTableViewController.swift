@@ -39,8 +39,7 @@ final class DetailsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        //TOOD: Implement me
-        cell.textLabel?.text = "John Appleseed"
+        cell.textLabel?.text = contacts[indexPath.row]
         return cell
     }
 
