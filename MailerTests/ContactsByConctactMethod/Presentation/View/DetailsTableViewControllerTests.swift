@@ -13,20 +13,30 @@ import XCTest
 final class DetailsTableViewControllerTests: XCTestCase {
 
     func test_title_is_correct_for_post() {
-        let sut = DetailsTableViewController(contactMethod: .post)
-        sut.loadViewIfNeeded()
+        let sut = makeSUT(contactMethod: .post)
         XCTAssertEqual(sut.title, "Post")
     }
 
     func test_title_is_correct_for_sms() {
-        let sut = DetailsTableViewController(contactMethod: .sms)
-        sut.loadViewIfNeeded()
+        let sut = makeSUT(contactMethod: .sms)
         XCTAssertEqual(sut.title, "SMS")
     }
 
     func test_title_is_correct_for_email() {
-        let sut = DetailsTableViewController(contactMethod: .email)
-        sut.loadViewIfNeeded()
+        let sut = makeSUT(contactMethod: .email)
         XCTAssertEqual(sut.title, "e-mail")
+    }
+
+    // MARK: Helpers
+
+    private func makeSUT(
+        contactMethod: ContactMethod = .post,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> DetailsTableViewController {
+        let sut = DetailsTableViewController(contactMethod: contactMethod)
+        sut.loadViewIfNeeded()
+        checkForMemoryLeak(on: sut, file: file, line: line)
+        return sut
     }
 }
