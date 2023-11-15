@@ -12,6 +12,7 @@ final class DetailsTableViewController: UITableViewController {
     private let cellIdentifier = "DetailsTableViewCell"
     
     private let contactMethod: ContactMethod
+    private var contacts: [String] = []
 
     init(contactMethod: ContactMethod) {
         self.contactMethod = contactMethod
@@ -33,7 +34,7 @@ final class DetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return contacts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,5 +42,9 @@ final class DetailsTableViewController: UITableViewController {
         //TOOD: Implement me
         cell.textLabel?.text = "John Appleseed"
         return cell
+    }
+
+    func display(_ contacts: [String]) {
+        self.contacts = contacts
     }
 }

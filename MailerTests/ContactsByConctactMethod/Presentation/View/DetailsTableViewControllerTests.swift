@@ -32,6 +32,13 @@ final class DetailsTableViewControllerTests: XCTestCase {
         sut.hasNoContacts()
     }
 
+    func test_has_same_rows_as_contacts_displayed() {
+        let sut = makeSUT()
+        let contacts = ["Dummy", "Dummy", "Dummy"]
+        sut.display(contacts)
+        XCTAssertEqual(sut.tableView(sut.tableView, numberOfRowsInSection: 0), 3)
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
