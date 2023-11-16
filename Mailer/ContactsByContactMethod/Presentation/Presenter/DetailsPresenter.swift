@@ -19,10 +19,6 @@ struct DetailsPresenter {
     }
 
     func viewIsReady() {
-        if contactMethod == .post {
-            view.setTitle(to: "Post")
-        } else {
-            view.setTitle(to: "SMS")
-        }
+       view.setTitle(to: contactMethod.rawValue)
     }
 }

@@ -26,6 +26,13 @@ final class DetailsPresenterTests: XCTestCase {
         XCTAssertEqual(view.setTitleValue, "SMS")
     }
 
+    func test_set_view_title_correctly_for_email() {
+        let view = DetailsViewSpy()
+        let sut = makeSUT(contactMethod: .email, view: view)
+        sut.viewIsReady()
+        XCTAssertEqual(view.setTitleValue, "e-mail")
+    }
+
     // MARK: Helpers
 
     private final class DetailsViewSpy: DetailsView {
