@@ -6,4 +6,29 @@
 //  Copyright © 2023 Trainline. All rights reserved.
 //
 
-import Foundation
+import XCTest
+
+@testable import Mailer
+
+final class DetailsPresenterTests: XCTestCase {
+
+    func test_set_view_title_when_view_ready() {
+        let view = DetailsViewSpy()
+        let sut = DetailsPresenter(view: view)
+        sut.viewIsReady()
+        XCTAssertTrue(view.titleSet)
+    }
+
+    // MARK: Helpers
+
+    private final class DetailsViewSpy: DetailsView {
+
+        private(set) var titleSet = false
+
+        func display(_: [String]) { }
+
+        func setTitle(to: String) {
+            titleSet = true
+        }
+    }
+}
