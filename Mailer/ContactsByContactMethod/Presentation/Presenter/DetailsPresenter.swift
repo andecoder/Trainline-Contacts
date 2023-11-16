@@ -10,13 +10,19 @@ import Foundation
 
 struct DetailsPresenter {
 
+    private let contactMethod: ContactMethod
     private let view: DetailsView
 
-    init(view: DetailsView) {
+    init(contactMethod: ContactMethod, view: DetailsView) {
+        self.contactMethod = contactMethod
         self.view = view
     }
 
     func viewIsReady() {
-        view.setTitle(to: "Post")
+        if contactMethod == .post {
+            view.setTitle(to: "Post")
+        } else {
+            view.setTitle(to: "SMS")
+        }
     }
 }
