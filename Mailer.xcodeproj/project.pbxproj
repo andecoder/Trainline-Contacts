@@ -17,6 +17,7 @@
 		1B0085D624192A9100143B22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B0085D524192A9100143B22 /* README.md */; };
 		1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */; };
 		6705242F2B05647F00081C4F /* DetailsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6705242E2B05647F00081C4F /* DetailsTableViewControllerTests.swift */; };
+		670524372B06B19100081C4F /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524362B06B19100081C4F /* DetailsView.swift */; };
 		6750B8602B01A6D800C2C293 /* ContactsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */; };
 		67AAE83A2AF5B887002FC16D /* ContactLoaderServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */; };
 		67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */; };
@@ -67,6 +68,7 @@
 		1B632782241938D1001943B8 /* MailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B632786241938D1001943B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6705242E2B05647F00081C4F /* DetailsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewControllerTests.swift; sourceTree = "<group>"; };
+		670524362B06B19100081C4F /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUIComposer.swift; sourceTree = "<group>"; };
 		67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapter.swift; sourceTree = "<group>"; };
 		67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapterTests.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */,
+				670524362B06B19100081C4F /* DetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */,
 				67AAE84B2AF70977002FC16D /* ContactRepository.swift in Sources */,
 				0C79247A21F71ACF00C7E3C2 /* CSVReaderWriter.swift in Sources */,
+				670524372B06B19100081C4F /* DetailsView.swift in Sources */,
 				0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */,
 				9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */,
 				67C2BFDA2AF0BBDB002FA8C9 /* ContactCellViewModel.swift in Sources */,
