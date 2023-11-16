@@ -39,6 +39,12 @@ final class DetailsTableViewControllerTests: XCTestCase {
         sut.hasNoContacts()
     }
 
+    func test_notify_when_view_is_ready() {
+        var viewIsReadyCalled = false
+        _ = makeSUT { viewIsReadyCalled = true }
+        XCTAssertTrue(viewIsReadyCalled)
+    }
+
     func test_rows_have_correct_text() {
         let sut = makeSUT()
         let contacts = [
@@ -53,9 +59,10 @@ final class DetailsTableViewControllerTests: XCTestCase {
     private func makeSUT(
         contactMethod: ContactMethod = .post,
         file: StaticString = #filePath,
-        line: UInt = #line
+        line: UInt = #line,
+        viewIsReady: @escaping () -> Void = { }
     ) -> DetailsTableViewController {
-        let sut = DetailsTableViewController(contactMethod: contactMethod)
+        let sut = DetailsTableViewController(contactMethod: contactMethod, viewIsReady: viewIsReady)
         sut.loadViewIfNeeded()
         checkForMemoryLeak(on: sut, file: file, line: line)
         return sut

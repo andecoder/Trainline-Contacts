@@ -13,9 +13,11 @@ final class DetailsTableViewController: UITableViewController {
     
     private let contactMethod: ContactMethod
     private var contacts: [String] = []
+    private let viewIsReady: () -> Void
 
-    init(contactMethod: ContactMethod) {
+    init(contactMethod: ContactMethod, viewIsReady: @escaping () -> Void) {
         self.contactMethod = contactMethod
+        self.viewIsReady = viewIsReady
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,6 +29,7 @@ final class DetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         title = contactMethod.rawValue
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        viewIsReady()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
