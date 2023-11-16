@@ -14,26 +14,35 @@ final class DetailsPresenterTests: XCTestCase {
 
     func test_set_view_title_correctly_for_post() {
         let view = DetailsViewSpy()
-        let sut = DetailsPresenter(contactMethod: .post, view: view)
-        sut.viewIsReady()
+        _ = makeSUT(contactMethod: .post, view: view)
         XCTAssertEqual(view.setTitleValue, "Post")
     }
 
     func test_set_view_title_correctly_for_sms() {
         let view = DetailsViewSpy()
-        let sut = DetailsPresenter(contactMethod: .sms, view: view)
-        sut.viewIsReady()
+        _ = makeSUT(contactMethod: .sms, view: view)
         XCTAssertEqual(view.setTitleValue, "SMS")
     }
 
     func test_set_view_title_correctly_for_email() {
         let view = DetailsViewSpy()
-        let sut = makeSUT(contactMethod: .email, view: view)
-        sut.viewIsReady()
+        _ = makeSUT(contactMethod: .email, view: view)
         XCTAssertEqual(view.setTitleValue, "e-mail")
     }
 
     // MARK: Helpers
+
+    private func makeSUT(
+        contactMethod: ContactMethod,
+        view: DetailsViewSpy,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> DetailsPresenter {
+        let sut = DetailsPresenter(contactMethod: contactMethod, view: view)
+        sut.viewIsReady()
+        checkForMemoryLeak(on: view, file: file, line: line)
+        return sut
+    }
 
     private final class DetailsViewSpy: DetailsView {
 
