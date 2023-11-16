@@ -142,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				6705242C2B05645F00081C4F /* Presentation */,
+				670524392B06B8FF00081C4F /* UI */,
 			);
 			path = ContactsByConctactMethod;
 			sourceTree = "<group>";
@@ -149,7 +150,6 @@
 		6705242C2B05645F00081C4F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				6705242D2B05646E00081C4F /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -160,6 +160,30 @@
 				6705242E2B05647F00081C4F /* DetailsTableViewControllerTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		670524342B06B11900081C4F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				670524352B06B12100081C4F /* View */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		670524352B06B12100081C4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		670524392B06B8FF00081C4F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6705242D2B05646E00081C4F /* View */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		67AAE8382AF5B85E002FC16D /* Data */ = {
@@ -288,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				67C2BFE52AF0C2C8002FA8C9 /* Presentation */,
+				670524342B06B11900081C4F /* UI */,
 			);
 			path = ContactsByContactMethod;
 			sourceTree = "<group>";
@@ -303,7 +328,6 @@
 		67C2BFE62AF0C2CE002FA8C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */,
 				670524362B06B19100081C4F /* DetailsView.swift */,
 			);
 			path = View;
