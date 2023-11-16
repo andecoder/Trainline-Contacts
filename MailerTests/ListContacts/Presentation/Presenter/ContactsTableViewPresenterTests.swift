@@ -45,7 +45,6 @@ final class ContactsTableViewPresenterTests: XCTestCase {
         let sut = ContactsTableViewPresenter(service: service, view: view)
         sut.loadContacts()
         checkForMemoryLeak(on: service, file: file, line: line)
-        checkForMemoryLeak(on: sut, file: file, line: line)
         checkForMemoryLeak(on: view, file: file, line: line)
         return sut
     }

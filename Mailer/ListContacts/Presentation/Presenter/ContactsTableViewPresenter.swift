@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ContactsTableViewPresenter: LoadContactsUseCase {
+struct ContactsTableViewPresenter: LoadContactsUseCase {
 
     private let service: ContactLoaderService
     private let view: ContactListView
