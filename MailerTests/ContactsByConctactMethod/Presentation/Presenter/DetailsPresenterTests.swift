@@ -19,15 +19,24 @@ final class DetailsPresenterTests: XCTestCase {
         XCTAssertTrue(view.titleSet)
     }
 
+    func test_set_view_title_correctly_for_post() {
+        let view = DetailsViewSpy()
+        let sut = DetailsPresenter(view: view)
+        sut.viewIsReady()
+        XCTAssertEqual(view.setTitleValue, "Post")
+    }
+
     // MARK: Helpers
 
     private final class DetailsViewSpy: DetailsView {
 
+        private(set) var setTitleValue: String?
         private(set) var titleSet = false
 
         func display(_: [String]) { }
 
-        func setTitle(to: String) {
+        func setTitle(to title: String) {
+            setTitleValue = title
             titleSet = true
         }
     }

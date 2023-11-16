@@ -17,6 +17,6 @@ struct DetailsPresenter {
     }
 
     func viewIsReady() {
-        view.setTitle(to: "")
+        view.setTitle(to: "Post")
     }
 }
