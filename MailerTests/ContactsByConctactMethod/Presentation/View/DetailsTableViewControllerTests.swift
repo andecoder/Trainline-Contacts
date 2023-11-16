@@ -12,21 +12,6 @@ import XCTest
 
 final class DetailsTableViewControllerTests: XCTestCase {
 
-    func test_title_is_correct_for_post() {
-        let sut = makeSUT(contactMethod: .post)
-        XCTAssertEqual(sut.title, "Post")
-    }
-
-    func test_title_is_correct_for_sms() {
-        let sut = makeSUT(contactMethod: .sms)
-        XCTAssertEqual(sut.title, "SMS")
-    }
-
-    func test_title_is_correct_for_email() {
-        let sut = makeSUT(contactMethod: .email)
-        XCTAssertEqual(sut.title, "e-mail")
-    }
-
     func test_display_provided_title() {
         let sut = makeSUT()
         let title = "A custom title"
@@ -57,12 +42,11 @@ final class DetailsTableViewControllerTests: XCTestCase {
     // MARK: Helpers
 
     private func makeSUT(
-        contactMethod: ContactMethod = .post,
         file: StaticString = #filePath,
         line: UInt = #line,
         viewIsReady: @escaping () -> Void = { }
     ) -> DetailsTableViewController {
-        let sut = DetailsTableViewController(contactMethod: contactMethod, viewIsReady: viewIsReady)
+        let sut = DetailsTableViewController(viewIsReady: viewIsReady)
         sut.loadViewIfNeeded()
         checkForMemoryLeak(on: sut, file: file, line: line)
         return sut
