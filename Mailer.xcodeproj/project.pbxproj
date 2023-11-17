@@ -21,6 +21,9 @@
 		670524372B06B19100081C4F /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524362B06B19100081C4F /* DetailsView.swift */; };
 		6705243B2B06B92100081C4F /* DetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6705243A2B06B92100081C4F /* DetailsPresenterTests.swift */; };
 		6705243F2B070E5600081C4F /* ContactLoaderServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6705243E2B070E5600081C4F /* ContactLoaderServiceMock.swift */; };
+		670524432B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524422B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift */; };
+		670524462B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524452B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift */; };
+		670524482B07132800081C4F /* FakeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524472B07132800081C4F /* FakeRepository.swift */; };
 		6750B8602B01A6D800C2C293 /* ContactsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */; };
 		67AAE83A2AF5B887002FC16D /* ContactLoaderServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */; };
 		67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */; };
@@ -75,6 +78,9 @@
 		670524362B06B19100081C4F /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		6705243A2B06B92100081C4F /* DetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenterTests.swift; sourceTree = "<group>"; };
 		6705243E2B070E5600081C4F /* ContactLoaderServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceMock.swift; sourceTree = "<group>"; };
+		670524422B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodContactLoaderServiceDecoratorTests.swift; sourceTree = "<group>"; };
+		670524452B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodContactLoaderServiceDecorator.swift; sourceTree = "<group>"; };
+		670524472B07132800081C4F /* FakeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRepository.swift; sourceTree = "<group>"; };
 		6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUIComposer.swift; sourceTree = "<group>"; };
 		67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapter.swift; sourceTree = "<group>"; };
 		67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapterTests.swift; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				6705243C2B06B92A00081C4F /* Presenter */,
+				670524412B07124B00081C4F /* Service */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -213,8 +220,25 @@
 			isa = PBXGroup;
 			children = (
 				6705243E2B070E5600081C4F /* ContactLoaderServiceMock.swift */,
+				670524472B07132800081C4F /* FakeRepository.swift */,
 			);
 			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		670524412B07124B00081C4F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				670524422B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		670524442B07126E00081C4F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				670524452B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		67AAE8382AF5B85E002FC16D /* Data */ = {
@@ -352,6 +376,7 @@
 		67C2BFE52AF0C2C8002FA8C9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				670524442B07126E00081C4F /* Service */,
 				670524302B05693D00081C4F /* Presenter */,
 				67C2BFE62AF0C2CE002FA8C9 /* View */,
 			);
@@ -644,12 +669,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				67AAE8452AF70467002FC16D /* ContactMethodMapperTests.swift in Sources */,
+				670524482B07132800081C4F /* FakeRepository.swift in Sources */,
 				6705242F2B05647F00081C4F /* DetailsTableViewControllerTests.swift in Sources */,
 				67C2C0072AF3F862002FA8C9 /* XCTestCase+MemoryLeak.swift in Sources */,
 				6705243B2B06B92100081C4F /* DetailsPresenterTests.swift in Sources */,
 				67C2BFEE2AF0C723002FA8C9 /* ContactsTableViewPresenterTests.swift in Sources */,
 				67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */,
 				67C2BFD82AF0B9B7002FA8C9 /* ContactsTableViewControllerTests.swift in Sources */,
+				670524432B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift in Sources */,
 				67C2C0052AF3F553002FA8C9 /* Contact+Data.swift in Sources */,
 				67AAE8512AF70A31002FC16D /* FilePathContactRepositoryTests.swift in Sources */,
 				67C2BFDD2AF0BF48002FA8C9 /* ContactCellViewModel+Data.swift in Sources */,
@@ -674,6 +701,7 @@
 				67AAE84E2AF709B5002FC16D /* FilePathContactRepository.swift in Sources */,
 				0C79247921F71ACF00C7E3C2 /* CSVWriter.swift in Sources */,
 				67C2BFFC2AF3DE8F002FA8C9 /* LoadContactsUseCase.swift in Sources */,
+				670524462B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift in Sources */,
 				67AAE8422AF70427002FC16D /* ContactMethodMapper.swift in Sources */,
 				67AAE8482AF704EF002FC16D /* ContactMethod.swift in Sources */,
 				9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */,

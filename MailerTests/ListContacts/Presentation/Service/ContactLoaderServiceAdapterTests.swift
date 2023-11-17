@@ -18,10 +18,4 @@ final class ContactLoaderServiceAdapterTests: XCTestCase {
         sut.loadContacts() { receivedResult = $0 }
         XCTAssertEqual(try receivedResult?.get(), Contact.dummyData)
     }
-
-    // MARK: Helpers
-
-    private final class FakeRepository: ContactRepository {
-        let contacts: [Contact] = Contact.dummyData
-    }
 }
