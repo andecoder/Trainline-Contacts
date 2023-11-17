@@ -38,5 +38,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func showContacts(for contactMethod: ContactMethod) {
+        let details = DetailsUIComposer.contactListComposedWith(contactMethod: contactMethod, repository: repository)
+        navigationController.pushViewController(details, animated: true)
     }
 }
