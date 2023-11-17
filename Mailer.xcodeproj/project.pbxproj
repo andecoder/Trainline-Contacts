@@ -200,6 +200,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		670524382B06B27600081C4F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				67C2C0082AF3FC46002FA8C9 /* Mapper */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		670524392B06B8FF00081C4F /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,7 +489,6 @@
 		67C2BFFD2AF3EAA1002FA8C9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				67C2C0082AF3FC46002FA8C9 /* Mapper */,
 				67C2BFE22AF0C2A5002FA8C9 /* View */,
 				6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */,
 			);
@@ -539,6 +546,7 @@
 				67C2BFE72AF0C2E8002FA8C9 /* Core */,
 				67C2BFE42AF0C2C0002FA8C9 /* ContactsByContactMethod */,
 				67C2BFE02AF0C270002FA8C9 /* ListContacts */,
+				670524382B06B27600081C4F /* Shared */,
 				9A3AB2771F57699C00C822CF /* AppDelegate.swift */,
 			);
 			path = Mailer;

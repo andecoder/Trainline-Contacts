@@ -22,3 +22,14 @@ extension WeakRefProxy: ContactListView where T: ContactListView {
         obj?.display(models)
     }
 }
+
+extension WeakRefProxy: DetailsView where T: DetailsView {
+   
+    func display(_ contacts: [String]) {
+        obj?.display(contacts)
+    }
+
+    func setTitle(to title: String) {
+        obj?.setTitle(to: title)
+    }
+}
