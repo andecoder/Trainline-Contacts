@@ -17,10 +17,3 @@ extension Contact {
     static let dummyData: [Contact] = [john, velma, porter
     ]
 }
-
-extension Contact: Equatable {
-
-    public static func == (lhs: Contact, rhs: Contact) -> Bool {
-        lhs.name == rhs.name && lhs.contactMethod == rhs.contactMethod
-    }
-}

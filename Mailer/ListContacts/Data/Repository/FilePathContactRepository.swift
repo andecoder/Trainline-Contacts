@@ -22,15 +22,27 @@ final class FilePathContactRepository: ContactRepository {
 
     private(set) lazy var contacts: [Contact] = {
         csvReader.open(path: filePath)
-        var contacts: [Contact] = []
+        var contacts: Set<Contact> = []
         while let row = csvReader.readNextRow() {
             let contact = Contact(
                 name: String(row[0]),
                 contactMethod: mapper(String(row[1]))
             )
-            contacts.append(contact)
+            contacts.insert(contact)
         }
         csvReader.close()
         return contacts
     }()
+}
+
+extension Contact: Hashable {
+    
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        lhs.name == rhs.name && lhs.contactMethod == rhs.contactMethod
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(contactMethod)
+    }
 }
