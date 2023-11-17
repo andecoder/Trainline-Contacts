@@ -57,16 +57,4 @@ final class ContactsTableViewPresenterTests: XCTestCase {
             displayedContacts = contacts
         }
     }
-
-    private final class ContactLoaderServiceMock: ContactLoaderService {
-
-        var loadContactsReturn: Result<[Contact], Error> = .success(Contact.dummyData)
-
-        private(set) var loadContactsCount = 0
-
-        func loadContacts(completion: @escaping (Result<[Contact], Error>) -> Void) {
-            loadContactsCount += 1
-            completion(loadContactsReturn)
-        }
-    }
 }
