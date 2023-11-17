@@ -27,7 +27,7 @@ struct DetailsPresenter {
 
     private func fetchContacts() {
         service.loadContacts { result in
-            let contacts = try! result.get()
+            let contacts = (try? result.get()) ?? []
             self.view.display(contacts.map(\.name))
         }
     }

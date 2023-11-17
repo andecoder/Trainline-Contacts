@@ -37,6 +37,16 @@ final class DetailsPresenterTests: XCTestCase {
         XCTAssertEqual(view.displayedList, expectedNames)
     }
 
+    func test_display_empty_list_when_request_fails() {
+        struct TestError: Error { }
+
+        let service = ContactLoaderServiceMock()
+        service.loadContactsReturn = .failure(TestError())
+        let view = DetailsViewSpy()
+        _ = makeSUT(service: service, view: view)
+        XCTAssertEqual(view.displayedList, [])
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
