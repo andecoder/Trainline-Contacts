@@ -24,6 +24,7 @@
 		670524432B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524422B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift */; };
 		670524462B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524452B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift */; };
 		670524482B07132800081C4F /* FakeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524472B07132800081C4F /* FakeRepository.swift */; };
+		6705244A2B07163700081C4F /* DetailsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670524492B07163700081C4F /* DetailsUIComposer.swift */; };
 		6750B8602B01A6D800C2C293 /* ContactsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */; };
 		67AAE83A2AF5B887002FC16D /* ContactLoaderServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */; };
 		67AAE83D2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */; };
@@ -81,6 +82,7 @@
 		670524422B07125B00081C4F /* ContactMethodContactLoaderServiceDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodContactLoaderServiceDecoratorTests.swift; sourceTree = "<group>"; };
 		670524452B07127500081C4F /* ContactMethodContactLoaderServiceDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodContactLoaderServiceDecorator.swift; sourceTree = "<group>"; };
 		670524472B07132800081C4F /* FakeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRepository.swift; sourceTree = "<group>"; };
+		670524492B07163700081C4F /* DetailsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUIComposer.swift; sourceTree = "<group>"; };
 		6750B85F2B01A6D800C2C293 /* ContactsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsUIComposer.swift; sourceTree = "<group>"; };
 		67AAE8392AF5B887002FC16D /* ContactLoaderServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapter.swift; sourceTree = "<group>"; };
 		67AAE83C2AF5B8AE002FC16D /* ContactLoaderServiceAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderServiceAdapterTests.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				670524352B06B12100081C4F /* View */,
+				670524492B07163700081C4F /* DetailsUIComposer.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 			files = (
 				6750B8602B01A6D800C2C293 /* ContactsUIComposer.swift in Sources */,
 				0C79247C21F71ACF00C7E3C2 /* StreamClosable.swift in Sources */,
+				6705244A2B07163700081C4F /* DetailsUIComposer.swift in Sources */,
 				0C79247D21F71ACF00C7E3C2 /* CSVWriting.swift in Sources */,
 				67C2C0032AF3EE6A002FA8C9 /* Contact.swift in Sources */,
 				1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */,
