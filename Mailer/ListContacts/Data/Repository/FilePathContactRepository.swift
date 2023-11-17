@@ -31,7 +31,7 @@ final class FilePathContactRepository: ContactRepository {
             contacts.insert(contact)
         }
         csvReader.close()
-        return contacts
+        return contacts.sorted { lhs, rhs in lhs.name.lowercased() < rhs.name.lowercased() }
     }()
 }
 

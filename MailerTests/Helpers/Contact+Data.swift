@@ -14,6 +14,5 @@ extension Contact {
     static let john = Contact(name: "John Appleseed", contactMethod: .post)
     static let porter = Contact(name: "Porter Coffey", contactMethod: .sms)
     static let velma = Contact(name: "Velma Combs", contactMethod: .email)
-    static let dummyData: [Contact] = [john, velma, porter
-    ]
+    static let dummyData: [Contact] = [john, velma, porter]
 }
