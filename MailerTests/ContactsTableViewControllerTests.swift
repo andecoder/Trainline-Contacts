@@ -14,14 +14,23 @@ final class ContactsTableViewControllerTests: XCTestCase {
 
     func test_fetch_contacts_on_load() {
         var didLoadContacts: Bool = false
-        let sut = ContactsTableViewController { didLoadContacts = true }
+        let sut = ContactsTableViewController { _ in didLoadContacts = true }
         sut.loadViewIfNeeded()
         XCTAssertTrue(didLoadContacts)
     }
 
     func test_table_is_empty_when_view_loads() {
-        let sut = ContactsTableViewController { }
+        let sut = ContactsTableViewController { _ in }
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
+    }
+
+    func test_display_contacts_when_request_succeeds() {
+        let sut = ContactsTableViewController { completion in
+            let names = ["DUMMY", "DUMMY", "DUMMY"]
+            completion(names)
+        }
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 3)
     }
 }

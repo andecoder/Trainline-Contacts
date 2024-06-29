@@ -9,11 +9,15 @@ import UIKit
 
 final class ContactsTableViewController: UITableViewController {
 
+    typealias LoadContacts = (@escaping LoadContactsCallback) -> Void
+    typealias LoadContactsCallback = ([String]) -> Void
+
     private let cellIdentifier = "ContactsTableViewCell"
+    private let loadContacts: LoadContacts
 
-    private let loadContacts: () -> Void
+    private var contacts: [String] = []
 
-    init(loadContacts: @escaping () -> Void) {
+    init(loadContacts: @escaping LoadContacts) {
         self.loadContacts = loadContacts
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,7 +32,10 @@ final class ContactsTableViewController: UITableViewController {
 
         title = "Contacts"
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        loadContacts()
+        loadContacts { [weak self] contacts in
+            self?.contacts = contacts
+            self?.tableView.reloadData()
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,7 +43,7 @@ final class ContactsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return contacts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
