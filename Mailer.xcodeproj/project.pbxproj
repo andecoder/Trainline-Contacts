@@ -16,7 +16,6 @@
 		0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C79247721F71ACF00C7E3C2 /* CSVReader.swift */; };
 		1B0085D624192A9100143B22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B0085D524192A9100143B22 /* README.md */; };
 		1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */; };
-		1B632785241938D1001943B8 /* MailerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B632784241938D1001943B8 /* MailerTests.swift */; };
 		67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
@@ -45,7 +44,6 @@
 		1B0085D524192A9100143B22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		1B632782241938D1001943B8 /* MailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B632784241938D1001943B8 /* MailerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailerTests.swift; sourceTree = "<group>"; };
 		1B632786241938D1001943B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +86,6 @@
 		1B632783241938D1001943B8 /* MailerTests */ = {
 			isa = PBXGroup;
 			children = (
-				1B632784241938D1001943B8 /* MailerTests.swift */,
 				1B632786241938D1001943B8 /* Info.plist */,
 				67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */,
 			);
@@ -252,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */,
-				1B632785241938D1001943B8 /* MailerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
