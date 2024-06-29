@@ -8,9 +8,14 @@
 
 import XCTest
 
+@testable import Mailer
+
 final class ContactsTableViewControllerTests: XCTestCase {
 
-    func test_zero() {
-        XCTAssertTrue(true)
+    func test_fetch_contacts_on_load() {
+        var didLoadContacts: Bool = false
+        let sut = ContactsTableViewController { didLoadContacts = true }
+        sut.loadViewIfNeeded()
+        XCTAssertTrue(didLoadContacts)
     }
 }
