@@ -8,22 +8,22 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         let viewController = ContactsTableViewController()
-        
+
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.prefersLargeTitles = true
-        
+
         window = UIWindow()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
-        
+
+
         // TODO: Remove me
         let path = Bundle.main.path(forResource: "Contacts", ofType: "csv")!
         let reader = CSVReader()
