@@ -18,4 +18,10 @@ final class ContactsTableViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         XCTAssertTrue(didLoadContacts)
     }
+
+    func test_table_is_empty_when_view_loads() {
+        let sut = ContactsTableViewController { }
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
+    }
 }
