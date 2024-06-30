@@ -19,4 +19,8 @@ final class ContactMethodTests: XCTestCase {
     func test_title_for_post() {
         XCTAssertEqual(ContactMethod.post.title, "Post")
     }
+
+    func test_title_for_sms() {
+        XCTAssertEqual(ContactMethod.sms.title, "SMS")
+    }
 }

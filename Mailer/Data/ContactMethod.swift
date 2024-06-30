@@ -17,8 +17,8 @@ enum ContactMethod {
             "eMail"
         case .post:
             "Post"
-        default:
-            ""
+        case .sms:
+            "SMS"
         }
     }
 }
