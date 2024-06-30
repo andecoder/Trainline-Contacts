@@ -35,4 +35,13 @@ final class MailerSnapshotTests: XCTestCase {
         navController.navigationBar.prefersLargeTitles = true
         assertSnapshot(of: navController, as: .image)
     }
+
+    func test_details_screen() {
+        let names = ["Shelby Macias", "Noelani Ward", "Ursa Faulkner", "Heidi Lawson", "Velma Combs"]
+        let sut = DetailsTableViewController(title: "SMS", loadContacts: { completion in completion(names) })
+        let navController = UINavigationController()
+        navController.setViewControllers([UIViewController(), sut], animated: false)
+
+        assertSnapshot(of: navController, as: .image)
+    }
 }
