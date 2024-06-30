@@ -65,6 +65,9 @@ final class ContactsTableViewControllerTests: XCTestCase {
     ) -> ContactsTableViewController {
         let viewController = ContactsTableViewController(displayDetails: displayDetails, loadContacts: loadContacts)
         viewController.loadViewIfNeeded()
+        addTeardownBlock { [weak viewController] in
+            XCTAssertNil(viewController)
+        }
         return viewController
     }
 }
