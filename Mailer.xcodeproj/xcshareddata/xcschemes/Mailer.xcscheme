@@ -40,6 +40,17 @@
                ReferencedContainer = "container:Mailer.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "67F6364C2C31842B00592650"
+               BuildableName = "MailerSnapshotTests.xctest"
+               BlueprintName = "MailerSnapshotTests"
+               ReferencedContainer = "container:Mailer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

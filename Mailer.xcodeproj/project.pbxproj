@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,8 @@
 		67F636442C316C7E00592650 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636432C316C7E00592650 /* ContactViewModel.swift */; };
 		67F636462C31765800592650 /* DetailsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */; };
 		67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */; };
+		67F636502C31842B00592650 /* MailerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6364F2C31842B00592650 /* MailerSnapshotTests.swift */; };
+		67F636582C31848900592650 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 67F636572C31848900592650 /* SnapshotTesting */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
 		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
@@ -28,6 +30,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		1B632787241938D1001943B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3AB26C1F57699C00C822CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A3AB2731F57699C00C822CF;
+			remoteInfo = Mailer;
+		};
+		67F636512C31842B00592650 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A3AB26C1F57699C00C822CF /* Project object */;
 			proxyType = 1;
@@ -52,6 +61,8 @@
 		67F636432C316C7E00592650 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaks.swift"; sourceTree = "<group>"; };
+		67F6364D2C31842B00592650 /* MailerSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F6364F2C31842B00592650 /* MailerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailerSnapshotTests.swift; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +76,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F6364A2C31842B00592650 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F636582C31848900592650 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +119,14 @@
 			path = MailerTests;
 			sourceTree = "<group>";
 		};
+		67F6364E2C31842B00592650 /* MailerSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				67F6364F2C31842B00592650 /* MailerSnapshotTests.swift */,
+			);
+			path = MailerSnapshotTests;
+			sourceTree = "<group>";
+		};
 		9A3AB26B1F57699C00C822CF = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +134,7 @@
 				9A3AB2761F57699C00C822CF /* Mailer */,
 				9A3AB2891F5769CB00C822CF /* Supporting Files */,
 				1B632783241938D1001943B8 /* MailerTests */,
+				67F6364E2C31842B00592650 /* MailerSnapshotTests */,
 				9A3AB2751F57699C00C822CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +144,7 @@
 			children = (
 				9A3AB2741F57699C00C822CF /* Mailer.app */,
 				1B632782241938D1001943B8 /* MailerTests.xctest */,
+				67F6364D2C31842B00592650 /* MailerSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,6 +203,27 @@
 			productReference = 1B632782241938D1001943B8 /* MailerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		67F6364C2C31842B00592650 /* MailerSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67F636552C31842B00592650 /* Build configuration list for PBXNativeTarget "MailerSnapshotTests" */;
+			buildPhases = (
+				67F636492C31842B00592650 /* Sources */,
+				67F6364A2C31842B00592650 /* Frameworks */,
+				67F6364B2C31842B00592650 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67F636522C31842B00592650 /* PBXTargetDependency */,
+			);
+			name = MailerSnapshotTests;
+			packageProductDependencies = (
+				67F636572C31848900592650 /* SnapshotTesting */,
+			);
+			productName = MailerSnapshotTests;
+			productReference = 67F6364D2C31842B00592650 /* MailerSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9A3AB2731F57699C00C822CF /* Mailer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A3AB2861F57699C00C822CF /* Build configuration list for PBXNativeTarget "Mailer" */;
@@ -197,7 +247,7 @@
 		9A3AB26C1F57699C00C822CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Trainline;
 				TargetAttributes = {
@@ -205,6 +255,10 @@
 						CreatedOnToolsVersion = 11.3.1;
 						DevelopmentTeam = 4FM8U3FD59;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 9A3AB2731F57699C00C822CF;
+					};
+					67F6364C2C31842B00592650 = {
+						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 9A3AB2731F57699C00C822CF;
 					};
 					9A3AB2731F57699C00C822CF = {
@@ -223,18 +277,29 @@
 				Base,
 			);
 			mainGroup = 9A3AB26B1F57699C00C822CF;
+			packageReferences = (
+				67F636562C31848900592650 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 9A3AB2751F57699C00C822CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				9A3AB2731F57699C00C822CF /* Mailer */,
 				1B632781241938D1001943B8 /* MailerTests */,
+				67F6364C2C31842B00592650 /* MailerSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1B632780241938D1001943B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F6364B2C31842B00592650 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,6 +325,14 @@
 				67F636462C31765800592650 /* DetailsTableViewControllerTests.swift in Sources */,
 				67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */,
 				67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67F636492C31842B00592650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67F636502C31842B00592650 /* MailerSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +363,11 @@
 			target = 9A3AB2731F57699C00C822CF /* Mailer */;
 			targetProxy = 1B632787241938D1001943B8 /* PBXContainerItemProxy */;
 		};
+		67F636522C31842B00592650 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A3AB2731F57699C00C822CF /* Mailer */;
+			targetProxy = 67F636512C31842B00592650 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -305,7 +383,11 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MailerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverpoole.MailerTests;
@@ -328,13 +410,73 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MailerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.oliverpoole.MailerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mailer.app/Mailer";
+			};
+			name = Release;
+		};
+		67F636532C31842B00592650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.MailerSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mailer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mailer";
+			};
+			name = Debug;
+		};
+		67F636542C31842B00592650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.MailerSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mailer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mailer";
 			};
 			name = Release;
 		};
@@ -445,7 +587,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -458,7 +601,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.Mailer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -474,7 +620,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.Mailer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -490,6 +639,15 @@
 			buildConfigurations = (
 				1B632789241938D1001943B8 /* Debug */,
 				1B63278A241938D1001943B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67F636552C31842B00592650 /* Build configuration list for PBXNativeTarget "MailerSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67F636532C31842B00592650 /* Debug */,
+				67F636542C31842B00592650 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -513,6 +671,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		67F636562C31848900592650 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.16.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67F636572C31848900592650 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67F636562C31848900592650 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9A3AB26C1F57699C00C822CF /* Project object */;
 }
