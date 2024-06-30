@@ -13,14 +13,15 @@ import XCTest
 struct ContactLoader {
    
     private let filePath: String
-    private let reader: StreamOpenable
+    private let reader: StreamOpenable & StreamClosable
 
-    init(filePath: String, reader: StreamOpenable) {
+    init(filePath: String, reader: StreamOpenable & StreamClosable) {
         self.filePath = filePath
         self.reader = reader
     }
 
     func load() {
+        reader.close()
         reader.open(path: filePath)
     }
 }
@@ -35,14 +36,26 @@ final class ContactLoaderTests: XCTestCase {
         XCTAssertEqual(spyReader.openedFile, dummyPath)
     }
 
+    func test_load_closes_file_when_done() {
+        let spyReader = ReaderSpy()
+        let sut = ContactLoader(filePath: "DUMMY", reader: spyReader)
+        sut.load()
+        XCTAssertTrue(spyReader.closeCalled)
+    }
+
     // MARK: Helpers
 
-    private final class ReaderSpy: StreamOpenable {
+    private final class ReaderSpy: StreamOpenable, StreamClosable {
 
+        private(set) var closeCalled = false
         private(set) var openedFile: String?
 
         func open(path: String) {
             openedFile = path
+        }
+
+        func close() {
+            closeCalled = true
         }
     }
 }
