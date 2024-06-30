@@ -112,9 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				1B632786241938D1001943B8 /* Info.plist */,
-				67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */,
-				67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */,
-				67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */,
+				67F6365B2C318B7500592650 /* Extensions */,
+				67F6365A2C318B5C00592650 /* Presentation */,
 			);
 			path = MailerTests;
 			sourceTree = "<group>";
@@ -125,6 +124,35 @@
 				67F6364F2C31842B00592650 /* MailerSnapshotTests.swift */,
 			);
 			path = MailerSnapshotTests;
+			sourceTree = "<group>";
+		};
+		67F636592C318B4200592650 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9A3AB2771F57699C00C822CF /* AppDelegate.swift */,
+				9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */,
+				67F636432C316C7E00592650 /* ContactViewModel.swift */,
+				1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */,
+				9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		67F6365A2C318B5C00592650 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */,
+				67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		67F6365B2C318B7500592650 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9A3AB26B1F57699C00C822CF = {
@@ -152,11 +180,7 @@
 		9A3AB2761F57699C00C822CF /* Mailer */ = {
 			isa = PBXGroup;
 			children = (
-				9A3AB2771F57699C00C822CF /* AppDelegate.swift */,
-				9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */,
-				67F636432C316C7E00592650 /* ContactViewModel.swift */,
-				1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */,
-				9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */,
+				67F636592C318B4200592650 /* Presentation */,
 				9A3AB28E1F576DA700C822CF /* CSV */,
 			);
 			path = Mailer;
