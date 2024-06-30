@@ -41,6 +41,15 @@ final class DetailsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 3)
     }
 
+    func test_display_correct_cell_information() throws {
+        let name = "Michael Jackson"
+        let sut = makeSUT(loadContacts: { completion in completion([name]) })
+
+        let cell = try XCTUnwrap(sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)))
+        XCTAssertEqual(cell.textLabel?.text, name)
+        XCTAssertNil(cell.detailTextLabel?.text)
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
