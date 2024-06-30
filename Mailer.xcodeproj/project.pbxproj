@@ -17,6 +17,7 @@
 		1B0085D624192A9100143B22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B0085D524192A9100143B22 /* README.md */; };
 		1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */; };
 		6753E39C2C31B9AD0068CAFE /* InMemoryContactLoaderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753E39B2C31B9AD0068CAFE /* InMemoryContactLoaderCache.swift */; };
+		6753E3A42C31DB330068CAFE /* MailerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753E3A32C31DB330068CAFE /* MailerUITests.swift */; };
 		67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */; };
 		67F636442C316C7E00592650 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636432C316C7E00592650 /* ContactViewModel.swift */; };
 		67F636462C31765800592650 /* DetailsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */; };
@@ -48,6 +49,13 @@
 			remoteGlobalIDString = 9A3AB2731F57699C00C822CF;
 			remoteInfo = Mailer;
 		};
+		6753E3A72C31DB330068CAFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A3AB26C1F57699C00C822CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A3AB2731F57699C00C822CF;
+			remoteInfo = Mailer;
+		};
 		67F636512C31842B00592650 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9A3AB26C1F57699C00C822CF /* Project object */;
@@ -70,6 +78,8 @@
 		1B632782241938D1001943B8 /* MailerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B632786241938D1001943B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6753E39B2C31B9AD0068CAFE /* InMemoryContactLoaderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryContactLoaderCache.swift; sourceTree = "<group>"; };
+		6753E3A12C31DB330068CAFE /* MailerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6753E3A32C31DB330068CAFE /* MailerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailerUITests.swift; sourceTree = "<group>"; };
 		67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		67F636432C316C7E00592650 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -97,6 +107,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		1B63277F241938D1001943B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6753E39E2C31DB330068CAFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -141,6 +158,14 @@
 				67F6365A2C318B5C00592650 /* Presentation */,
 			);
 			path = MailerTests;
+			sourceTree = "<group>";
+		};
+		6753E3A22C31DB330068CAFE /* MailerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6753E3A32C31DB330068CAFE /* MailerUITests.swift */,
+			);
+			path = MailerUITests;
 			sourceTree = "<group>";
 		};
 		67F6364E2C31842B00592650 /* MailerSnapshotTests */ = {
@@ -214,6 +239,7 @@
 				9A3AB2891F5769CB00C822CF /* Supporting Files */,
 				1B632783241938D1001943B8 /* MailerTests */,
 				67F6364E2C31842B00592650 /* MailerSnapshotTests */,
+				6753E3A22C31DB330068CAFE /* MailerUITests */,
 				9A3AB2751F57699C00C822CF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -224,6 +250,7 @@
 				9A3AB2741F57699C00C822CF /* Mailer.app */,
 				1B632782241938D1001943B8 /* MailerTests.xctest */,
 				67F6364D2C31842B00592650 /* MailerSnapshotTests.xctest */,
+				6753E3A12C31DB330068CAFE /* MailerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,6 +306,24 @@
 			productReference = 1B632782241938D1001943B8 /* MailerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6753E3A02C31DB330068CAFE /* MailerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6753E3A92C31DB330068CAFE /* Build configuration list for PBXNativeTarget "MailerUITests" */;
+			buildPhases = (
+				6753E39D2C31DB330068CAFE /* Sources */,
+				6753E39E2C31DB330068CAFE /* Frameworks */,
+				6753E39F2C31DB330068CAFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6753E3A82C31DB330068CAFE /* PBXTargetDependency */,
+			);
+			name = MailerUITests;
+			productName = MailerUITests;
+			productReference = 6753E3A12C31DB330068CAFE /* MailerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		67F6364C2C31842B00592650 /* MailerSnapshotTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67F636552C31842B00592650 /* Build configuration list for PBXNativeTarget "MailerSnapshotTests" */;
@@ -333,6 +378,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9A3AB2731F57699C00C822CF;
 					};
+					6753E3A02C31DB330068CAFE = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 9A3AB2731F57699C00C822CF;
+					};
 					67F6364C2C31842B00592650 = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 9A3AB2731F57699C00C822CF;
@@ -363,12 +412,20 @@
 				9A3AB2731F57699C00C822CF /* Mailer */,
 				1B632781241938D1001943B8 /* MailerTests */,
 				67F6364C2C31842B00592650 /* MailerSnapshotTests */,
+				6753E3A02C31DB330068CAFE /* MailerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1B632780241938D1001943B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6753E39F2C31DB330068CAFE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -407,6 +464,14 @@
 				67F636732C31AC8100592650 /* InMemoryContactLoaderCacheTests.swift in Sources */,
 				67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */,
 				67F6366D2C31A40F00592650 /* ContactMethodTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6753E39D2C31DB330068CAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6753E3A42C31DB330068CAFE /* MailerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +515,11 @@
 			isa = PBXTargetDependency;
 			target = 9A3AB2731F57699C00C822CF /* Mailer */;
 			targetProxy = 1B632787241938D1001943B8 /* PBXContainerItemProxy */;
+		};
+		6753E3A82C31DB330068CAFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A3AB2731F57699C00C822CF /* Mailer */;
+			targetProxy = 6753E3A72C31DB330068CAFE /* PBXContainerItemProxy */;
 		};
 		67F636522C31842B00592650 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -509,6 +579,60 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mailer.app/Mailer";
+			};
+			name = Release;
+		};
+		6753E3AA2C31DB330068CAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.MailerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mailer;
+			};
+			name = Debug;
+		};
+		6753E3AB2C31DB330068CAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thetrainline.MailerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Mailer;
 			};
 			name = Release;
 		};
@@ -727,6 +851,15 @@
 			buildConfigurations = (
 				1B632789241938D1001943B8 /* Debug */,
 				1B63278A241938D1001943B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6753E3A92C31DB330068CAFE /* Build configuration list for PBXNativeTarget "MailerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6753E3AA2C31DB330068CAFE /* Debug */,
+				6753E3AB2C31DB330068CAFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
