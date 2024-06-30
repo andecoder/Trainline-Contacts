@@ -20,7 +20,7 @@ enum ContactMethodAdapter {
         if country == "Saint Lucia" || country == "Czech Republic" {
             return .email
         }
-        if country == "Italy" || country == "Australia" {
+        if country == "Italy" || country == "Australia" || country == "Finland" {
             return .post
         }
         return .sms
@@ -49,6 +49,12 @@ final class ContactMethodAdapterTests: XCTestCase {
 
     func test_method_is_post_for_australia() {
         let fullAddress = "street|city|state|postcode|Australia"
+        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
+        XCTAssertEqual(contactMethod, .post)
+    }
+
+    func test_method_is_post_for_finland() {
+        let fullAddress = "street|city|state|postcode|Finland"
         let contactMethod = ContactMethodAdapter.method(from: fullAddress)
         XCTAssertEqual(contactMethod, .post)
     }
