@@ -21,9 +21,9 @@ struct ContactLoader {
     }
 
     func load() {
-        reader.close()
-        _ = reader.readNextRow()
         reader.open(path: filePath)
+        _ = reader.readNextRow()
+        reader.close()
     }
 }
 
@@ -34,42 +34,53 @@ final class ContactLoaderTests: XCTestCase {
         let dummyPath = "SomeRandomFilePath"
         let sut = ContactLoader(filePath: dummyPath, reader: spyReader)
         sut.load()
-        XCTAssertEqual(spyReader.openedFile, dummyPath)
+        XCTAssertTrue(spyReader.calledActions.contains(.open(dummyPath)))
     }
 
     func test_load_closes_file_when_done() {
         let spyReader = ReaderSpy()
         let sut = ContactLoader(filePath: "DUMMY", reader: spyReader)
         sut.load()
-        XCTAssertTrue(spyReader.closeCalled)
+        XCTAssertTrue(spyReader.calledActions.contains(.close))
     }
 
     func test_load_read_rows() {
         let spyReader = ReaderSpy()
         let sut = ContactLoader(filePath: "DUMMY", reader: spyReader)
         sut.load()
-        XCTAssertTrue(spyReader.readNextRowCalled)
+        XCTAssertTrue(spyReader.calledActions.contains(.readRow))
+    }
+
+    func test_perform_actions_in_correct_order() {
+        let spyReader = ReaderSpy()
+        let dummyPath = "SomeRandomFilePath"
+        let sut = ContactLoader(filePath: dummyPath, reader: spyReader)
+        sut.load()
+        XCTAssertEqual(spyReader.calledActions, [.open(dummyPath), .readRow, .close])
     }
 
     // MARK: Helpers
 
     private final class ReaderSpy: CSVReading {
 
-        private(set) var closeCalled = false
-        private(set) var openedFile: String?
-        private(set) var readNextRowCalled = false
+        enum Actions: Equatable {
+            case open(String)
+            case readRow, close
+        }
+
+        private(set) var calledActions: [Actions] = []
 
         func open(path: String) {
-            openedFile = path
+            calledActions.append(.open(path))
         }
 
         func readNextRow() -> [Substring]? {
-            readNextRowCalled = true
+            calledActions.append(.readRow)
             return nil
         }
 
         func close() {
-            closeCalled = true
+            calledActions.append(.close)
         }
     }
 }
