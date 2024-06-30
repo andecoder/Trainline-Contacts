@@ -26,6 +26,8 @@
 		67F636612C3198D800592650 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636602C3198D800592650 /* Contact.swift */; };
 		67F636632C3198EE00592650 /* ContactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636622C3198EE00592650 /* ContactLoader.swift */; };
 		67F636672C319F6300592650 /* ContactMethodAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636662C319F6300592650 /* ContactMethodAdapterTests.swift */; };
+		67F636692C31A33A00592650 /* ContactMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636682C31A33A00592650 /* ContactMethod.swift */; };
+		67F6366B2C31A35900592650 /* ContactMethodAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
 		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
@@ -71,6 +73,8 @@
 		67F636602C3198D800592650 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		67F636622C3198EE00592650 /* ContactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoader.swift; sourceTree = "<group>"; };
 		67F636662C319F6300592650 /* ContactMethodAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodAdapterTests.swift; sourceTree = "<group>"; };
+		67F636682C31A33A00592650 /* ContactMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethod.swift; sourceTree = "<group>"; };
+		67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodAdapter.swift; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 			children = (
 				67F636602C3198D800592650 /* Contact.swift */,
 				67F636622C3198EE00592650 /* ContactLoader.swift */,
+				67F636682C31A33A00592650 /* ContactMethod.swift */,
+				67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -397,6 +403,7 @@
 				67F636612C3198D800592650 /* Contact.swift in Sources */,
 				0C79247C21F71ACF00C7E3C2 /* StreamClosable.swift in Sources */,
 				67F636442C316C7E00592650 /* ContactViewModel.swift in Sources */,
+				67F6366B2C31A35900592650 /* ContactMethodAdapter.swift in Sources */,
 				0C79247D21F71ACF00C7E3C2 /* CSVWriting.swift in Sources */,
 				1B0085D824192C9D00143B22 /* ContactTableViewCell.swift in Sources */,
 				0C79247921F71ACF00C7E3C2 /* CSVWriter.swift in Sources */,
@@ -405,6 +412,7 @@
 				0C79247A21F71ACF00C7E3C2 /* CSVReaderWriter.swift in Sources */,
 				67F636632C3198EE00592650 /* ContactLoader.swift in Sources */,
 				0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */,
+				67F636692C31A33A00592650 /* ContactMethod.swift in Sources */,
 				9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */,
 				0C79247B21F71ACF00C7E3C2 /* CSVReading.swift in Sources */,
 				0C79247E21F71ACF00C7E3C2 /* StreamOpenable.swift in Sources */,

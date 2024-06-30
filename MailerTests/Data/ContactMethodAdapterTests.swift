@@ -8,25 +8,7 @@
 
 import XCTest
 
-enum ContactMethod {
-    case email, post, sms
-}
-
-enum ContactMethodAdapter {
-    private static let separator = "|"
-
-    static func method(from address: String) -> ContactMethod {
-        guard let country = address.components(separatedBy: separator).last else { return .sms }
-        switch country {
-        case "Saint Lucia", "Czech Republic":
-            return .email
-        case "Italy", "Australia", "Finland":
-            return .post
-        default:
-            return .sms
-        }
-    }
-}
+@testable import Mailer
 
 final class ContactMethodAdapterTests: XCTestCase {
 
