@@ -10,12 +10,12 @@ import UIKit
 final class ContactsTableViewController: UITableViewController {
 
     typealias LoadContacts = (@escaping LoadContactsCallback) -> Void
-    typealias LoadContactsCallback = ([String]) -> Void
+    typealias LoadContactsCallback = ([ContactViewModel]) -> Void
 
     private let cellIdentifier = "ContactsTableViewCell"
     private let loadContacts: LoadContacts
 
-    private var contacts: [String] = []
+    private var contacts: [ContactViewModel] = []
 
     init(loadContacts: @escaping LoadContacts) {
         self.loadContacts = loadContacts
@@ -48,10 +48,11 @@ final class ContactsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let contact = contacts[indexPath.row]
 
-        cell.textLabel?.text = "John Appleseed"
-        cell.detailTextLabel?.text = "Post"
-        //TODO: Implement me
+        cell.textLabel?.text = contact.name
+        cell.detailTextLabel?.text = contact.contactMethod
+
         return cell
     }
 
