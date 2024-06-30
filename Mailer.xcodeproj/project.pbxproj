@@ -25,10 +25,12 @@
 		67F6365E2C318C8A00592650 /* ContactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6365D2C318C8A00592650 /* ContactLoaderTests.swift */; };
 		67F636612C3198D800592650 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636602C3198D800592650 /* Contact.swift */; };
 		67F636632C3198EE00592650 /* ContactLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636622C3198EE00592650 /* ContactLoader.swift */; };
+		67F636652C31997C00592650 /* ContactViewModelAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636642C31997C00592650 /* ContactViewModelAdapterTests.swift */; };
 		67F636672C319F6300592650 /* ContactMethodAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636662C319F6300592650 /* ContactMethodAdapterTests.swift */; };
 		67F636692C31A33A00592650 /* ContactMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636682C31A33A00592650 /* ContactMethod.swift */; };
 		67F6366B2C31A35900592650 /* ContactMethodAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */; };
 		67F6366D2C31A40F00592650 /* ContactMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6366C2C31A40F00592650 /* ContactMethodTests.swift */; };
+		67F6366F2C31AA4000592650 /* Contact+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6366E2C31AA4000592650 /* Contact+TestData.swift */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
 		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
@@ -73,10 +75,12 @@
 		67F6365D2C318C8A00592650 /* ContactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderTests.swift; sourceTree = "<group>"; };
 		67F636602C3198D800592650 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		67F636622C3198EE00592650 /* ContactLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoader.swift; sourceTree = "<group>"; };
+		67F636642C31997C00592650 /* ContactViewModelAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModelAdapterTests.swift; sourceTree = "<group>"; };
 		67F636662C319F6300592650 /* ContactMethodAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodAdapterTests.swift; sourceTree = "<group>"; };
 		67F636682C31A33A00592650 /* ContactMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethod.swift; sourceTree = "<group>"; };
 		67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodAdapter.swift; sourceTree = "<group>"; };
 		67F6366C2C31A40F00592650 /* ContactMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodTests.swift; sourceTree = "<group>"; };
+		67F6366E2C31AA4000592650 /* Contact+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+TestData.swift"; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,8 +150,8 @@
 			children = (
 				9A3AB2771F57699C00C822CF /* AppDelegate.swift */,
 				9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */,
-				67F636432C316C7E00592650 /* ContactViewModel.swift */,
 				1B0085D724192C9D00143B22 /* ContactTableViewCell.swift */,
+				67F636432C316C7E00592650 /* ContactViewModel.swift */,
 				9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */,
 			);
 			path = Presentation;
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */,
+				67F6366E2C31AA4000592650 /* Contact+TestData.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				67F6365D2C318C8A00592650 /* ContactLoaderTests.swift */,
 				67F636662C319F6300592650 /* ContactMethodAdapterTests.swift */,
 				67F6366C2C31A40F00592650 /* ContactMethodTests.swift */,
+				67F636642C31997C00592650 /* ContactViewModelAdapterTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -385,6 +391,8 @@
 			files = (
 				67F636672C319F6300592650 /* ContactMethodAdapterTests.swift in Sources */,
 				67F636462C31765800592650 /* DetailsTableViewControllerTests.swift in Sources */,
+				67F6366F2C31AA4000592650 /* Contact+TestData.swift in Sources */,
+				67F636652C31997C00592650 /* ContactViewModelAdapterTests.swift in Sources */,
 				67F6365E2C318C8A00592650 /* ContactLoaderTests.swift in Sources */,
 				67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */,
 				67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */,

@@ -72,13 +72,3 @@ final class ContactLoaderTests: XCTestCase {
         }
     }
 }
-
-private extension Contact {
-
-    static let johnDoe = Contact(
-        fullName: "John Doe",
-        address: "A random address",
-        phoneNumber: "07543265478",
-        email: "j.doe@people.com"
-    )
-}
