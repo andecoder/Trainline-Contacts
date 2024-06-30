@@ -13,35 +13,35 @@ import XCTest
 final class ContactLoaderTests: XCTestCase {
 
     func test_perform_actions_in_correct_order() {
-        let spyReader = ReaderSpy()
         let dummyPath = "SomeRandomFilePath"
-        let sut = ContactLoader(filePath: dummyPath, reader: spyReader)
-        sut.load { _ in }
+        let spyReader = load(path: dummyPath)
         XCTAssertEqual(spyReader.calledActions, [.open(dummyPath), .readRow, .close])
     }
 
     func test_keeps_reading_while_there_are_rows() {
-        let spyReader = ReaderSpy(rows: [["A"], ["B"], ["C"]])
         let dummyPath = "SomeRandomFilePath"
-        let sut = ContactLoader(filePath: dummyPath, reader: spyReader)
-        sut.load { _ in }
+        let spyReader = load(path: dummyPath, rows: [["A"], ["B"], ["C"]])
         XCTAssertEqual(
             spyReader.calledActions,
-            [.open(dummyPath), .readRow, .readRow, .readRow, .readRow, .close])
+            [.open(dummyPath), .readRow, .readRow, .readRow, .readRow, .close]
+        )
     }
 
     func test_returns_valid_contacts() {
         let contact: [Substring] = ["John Doe", "A random address", "07543265478", "j.doe@people.com"]
-        let spyReader = ReaderSpy(rows: [contact])
         var receivedContacts: [Contact] = []
-        let sut = ContactLoader(filePath: "DUMMY", reader: spyReader)
-        sut.load { contacts in
-            receivedContacts = contacts
-        }
+        _ = load(rows: [contact]) { contacts in receivedContacts = contacts }
         XCTAssertEqual(receivedContacts, [.johnDoe])
     }
 
     // MARK: Helpers
+
+    private func load(path: String = "DUMMY", rows: [[Substring]] = [], onLoad: @escaping ([Contact]) -> Void = { _ in }) -> ReaderSpy {
+        let reader = ReaderSpy(rows: rows)
+        let sut = ContactLoader(filePath: path, reader: reader)
+        sut.load(completion: onLoad)
+        return reader
+    }
 
     private final class ReaderSpy: CSVReading {
 

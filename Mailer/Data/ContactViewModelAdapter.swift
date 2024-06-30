@@ -15,12 +15,14 @@ enum ContactViewModelAdapter {
     ) -> (@escaping ([ContactViewModel]) -> Void) -> Void {
         { completion in
             load { contacts in
-                let viewModels = contacts.map { contact -> ContactViewModel in
-                    let contactMethod = contactMethodMapper(contact.address)
-                    return ContactViewModel(name: contact.fullName, contactMethod: contactMethod)
-                }
+                let viewModels = contacts.map { viewModel(from: $0, with: contactMethodMapper) }
                 completion(viewModels)
             }
         }
+    }
+
+    private static func viewModel(from contact: Contact, with mapper: (String) -> ContactMethod) -> ContactViewModel {
+        let contactMethod = mapper(contact.address)
+        return ContactViewModel(name: contact.fullName, contactMethod: contactMethod)
     }
 }

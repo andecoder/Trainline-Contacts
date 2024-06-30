@@ -13,38 +13,34 @@ import XCTest
 final class ContactMethodAdapterTests: XCTestCase {
 
     func test_method_is_email_for_czech_republic() {
-        let fullAddress = "street|city|state|postcode|Czech Republic"
-        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
-        XCTAssertEqual(contactMethod, .email)
+        expect(.email, fromCountry: "Czech Republic")
     }
 
     func test_method_is_email_for_saint_lucia() {
-        let fullAddress = "street|city|state|postcode|Saint Lucia"
-        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
-        XCTAssertEqual(contactMethod, .email)
+        expect(.email, fromCountry: "Saint Lucia")
     }
 
     func test_method_is_post_for_italy() {
-        let fullAddress = "street|city|state|postcode|Italy"
-        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
-        XCTAssertEqual(contactMethod, .post)
+        expect(.post, fromCountry: "Italy")
     }
 
     func test_method_is_post_for_australia() {
-        let fullAddress = "street|city|state|postcode|Australia"
-        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
-        XCTAssertEqual(contactMethod, .post)
+        expect(.post, fromCountry: "Australia")
     }
 
     func test_method_is_post_for_finland() {
-        let fullAddress = "street|city|state|postcode|Finland"
-        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
-        XCTAssertEqual(contactMethod, .post)
+        expect(.post, fromCountry: "Finland")
     }
 
     func test_method_is_sms_for_other_countries() {
-        let fullAddress = "street|city|state|postcode|Portugal"
-        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
-        XCTAssertEqual(contactMethod, .sms)
+        expect(.sms, fromCountry: "Portugal")
+    }
+
+    // MARK: Helpers
+
+    private func expect(_ contactMethod: ContactMethod, fromCountry country: String, file: StaticString = #filePath, line: UInt = #line) {
+        let fullAddress = "street|city|state|postcode|\(country)"
+        let receivedContactMethod = ContactMethodAdapter.method(from: fullAddress)
+        XCTAssertEqual(receivedContactMethod, contactMethod)
     }
 }
