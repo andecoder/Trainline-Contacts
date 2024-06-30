@@ -10,4 +10,13 @@ import Foundation
 
 enum ContactMethod {
     case email, post, sms
+    
+    var title: String {
+        switch self {
+        case .email:
+            "eMail"
+        default:
+            ""
+        }
+    }
 }
