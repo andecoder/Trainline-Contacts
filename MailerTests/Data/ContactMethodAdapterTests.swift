@@ -17,13 +17,14 @@ enum ContactMethodAdapter {
 
     static func method(from address: String) -> ContactMethod {
         guard let country = address.components(separatedBy: separator).last else { return .sms }
-        if country == "Saint Lucia" || country == "Czech Republic" {
+        switch country {
+        case "Saint Lucia", "Czech Republic":
             return .email
-        }
-        if country == "Italy" || country == "Australia" || country == "Finland" {
+        case "Italy", "Australia", "Finland":
             return .post
+        default:
+            return .sms
         }
-        return .sms
     }
 }
 
