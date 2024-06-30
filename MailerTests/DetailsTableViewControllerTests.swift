@@ -32,11 +32,20 @@ final class DetailsTableViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
 
+    func test_display_contacts_when_request_succeeds() {
+        let sut = makeSUT(loadContacts: { completion in
+            let names = ["DUMMY", "DUMMY", "DUMMY"]
+            completion(names)
+        })
+
+        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 3)
+    }
+
     // MARK: Helpers
 
     private func makeSUT(
         title: String = "DUMMY",
-        loadContacts: @escaping DetailsTableViewController.LoadContacts = { }
+        loadContacts: @escaping DetailsTableViewController.LoadContacts = { _ in }
     ) -> DetailsTableViewController {
         let viewController = DetailsTableViewController(title: title, loadContacts: loadContacts)
         viewController.loadViewIfNeeded()
