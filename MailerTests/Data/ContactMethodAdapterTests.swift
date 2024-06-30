@@ -17,7 +17,7 @@ enum ContactMethodAdapter {
 
     static func method(from address: String) -> ContactMethod {
         guard let country = address.components(separatedBy: separator).last else { return .sms }
-        if country == "Saint Lucia" {
+        if country == "Saint Lucia" || country == "Czech Republic" {
             return .email
         }
         return .sms
@@ -25,6 +25,12 @@ enum ContactMethodAdapter {
 }
 
 final class ContactMethodAdapterTests: XCTestCase {
+
+    func test_method_is_email_for_czech_republic() {
+        let fullAddress = "street|city|state|postcode|Czech Republic"
+        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
+        XCTAssertEqual(contactMethod, .email)
+    }
 
     func test_method_is_email_for_saint_lucia() {
         let fullAddress = "street|city|state|postcode|Saint Lucia"
