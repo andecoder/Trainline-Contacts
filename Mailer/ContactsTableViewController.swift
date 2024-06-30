@@ -9,15 +9,18 @@ import UIKit
 
 final class ContactsTableViewController: UITableViewController {
 
+    typealias DisplayDetails = (ContactViewModel) -> Void
     typealias LoadContacts = (@escaping LoadContactsCallback) -> Void
     typealias LoadContactsCallback = ([ContactViewModel]) -> Void
 
     private let cellIdentifier = "ContactsTableViewCell"
+    private let displayDetails: DisplayDetails
     private let loadContacts: LoadContacts
 
     private var contacts: [ContactViewModel] = []
 
-    init(loadContacts: @escaping LoadContacts) {
+    init(displayDetails: @escaping DisplayDetails, loadContacts: @escaping LoadContacts) {
+        self.displayDetails = displayDetails
         self.loadContacts = loadContacts
         super.init(nibName: nil, bundle: nil)
     }
@@ -57,7 +60,7 @@ final class ContactsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailsTableViewController(), animated: true)
-        //TODO: Implement me
+        let contact = contacts[indexPath.row]
+        displayDetails(contact)
     }
 }

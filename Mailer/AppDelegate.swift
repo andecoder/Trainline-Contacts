@@ -14,7 +14,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let viewController = ContactsTableViewController { _ in }
+
+        let viewController = ContactsTableViewController(
+            displayDetails: { _ in }, loadContacts: { _ in }
+        )
 
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.prefersLargeTitles = true
