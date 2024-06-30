@@ -22,7 +22,8 @@ struct ContactLoader {
 
     func load() {
         reader.open(path: filePath)
-        _ = reader.readNextRow()
+        while let _ = reader.readNextRow() {
+        }
         reader.close()
     }
 }
@@ -37,6 +38,16 @@ final class ContactLoaderTests: XCTestCase {
         XCTAssertEqual(spyReader.calledActions, [.open(dummyPath), .readRow, .close])
     }
 
+    func test_keeps_reading_while_there_are_rows() {
+        let spyReader = ReaderSpy(rows: [["A"], ["B"], ["C"]])
+        let dummyPath = "SomeRandomFilePath"
+        let sut = ContactLoader(filePath: dummyPath, reader: spyReader)
+        sut.load()
+        XCTAssertEqual(
+            spyReader.calledActions,
+            [.open(dummyPath), .readRow, .readRow, .readRow, .readRow, .close])
+    }
+
     // MARK: Helpers
 
     private final class ReaderSpy: CSVReading {
@@ -47,6 +58,11 @@ final class ContactLoaderTests: XCTestCase {
         }
 
         private(set) var calledActions: [Actions] = []
+        private var rows: [[Substring]]
+
+        init(rows: [[Substring]] = []) {
+            self.rows = rows
+        }
 
         func open(path: String) {
             calledActions.append(.open(path))
@@ -54,7 +70,8 @@ final class ContactLoaderTests: XCTestCase {
 
         func readNextRow() -> [Substring]? {
             calledActions.append(.readRow)
-            return nil
+            guard !rows.isEmpty else { return nil }
+            return rows.removeFirst()
         }
 
         func close() {
