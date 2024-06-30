@@ -9,9 +9,13 @@ import UIKit
 
 final class DetailsTableViewController: UITableViewController {
 
-    private let cellIdentifier = "DetailsTableViewCell"
+    typealias LoadContacts = () -> Void
 
-    init(title: String) {
+    private let cellIdentifier = "DetailsTableViewCell"
+    private let loadContacts: LoadContacts
+
+    init(title: String, loadContacts: @escaping LoadContacts) {
+        self.loadContacts = loadContacts
         super.init(nibName: nil, bundle: nil)
         self.title = title
     }
@@ -23,6 +27,7 @@ final class DetailsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         tableView.register(ContactTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        loadContacts()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
