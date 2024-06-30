@@ -15,6 +15,8 @@ enum ContactMethod {
         switch self {
         case .email:
             "eMail"
+        case .post:
+            "Post"
         default:
             ""
         }
