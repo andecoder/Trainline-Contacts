@@ -35,9 +35,7 @@ final class DetailsTableViewControllerTests: XCTestCase {
     ) -> DetailsTableViewController {
         let viewController = DetailsTableViewController(title: title, loadContacts: loadContacts)
         viewController.loadViewIfNeeded()
-        addTeardownBlock { [weak viewController] in
-            XCTAssertNil(viewController)
-        }
+        trackMemoryLeaks(on: viewController)
         return viewController
     }
 }

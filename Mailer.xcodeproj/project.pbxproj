@@ -19,6 +19,7 @@
 		67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */; };
 		67F636442C316C7E00592650 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636432C316C7E00592650 /* ContactViewModel.swift */; };
 		67F636462C31765800592650 /* DetailsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */; };
+		67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
 		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
@@ -50,6 +51,7 @@
 		67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		67F636432C316C7E00592650 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewControllerTests.swift; sourceTree = "<group>"; };
+		67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaks.swift"; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				1B632786241938D1001943B8 /* Info.plist */,
 				67F636412C30600800592650 /* ContactsTableViewControllerTests.swift */,
 				67F636452C31765800592650 /* DetailsTableViewControllerTests.swift */,
+				67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */,
 			);
 			path = MailerTests;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				67F636462C31765800592650 /* DetailsTableViewControllerTests.swift in Sources */,
 				67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */,
+				67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

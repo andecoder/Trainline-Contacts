@@ -15,7 +15,7 @@ final class ContactsTableViewControllerTests: XCTestCase {
     func test_fetch_contacts_on_load() {
         var didLoadContacts: Bool = false
         _ = makeSUT(loadContacts: { _ in didLoadContacts = true })
-        
+
         XCTAssertTrue(didLoadContacts)
     }
 
@@ -65,9 +65,7 @@ final class ContactsTableViewControllerTests: XCTestCase {
     ) -> ContactsTableViewController {
         let viewController = ContactsTableViewController(displayDetails: displayDetails, loadContacts: loadContacts)
         viewController.loadViewIfNeeded()
-        addTeardownBlock { [weak viewController] in
-            XCTAssertNil(viewController)
-        }
+        trackMemoryLeaks(on: viewController)
         return viewController
     }
 }
