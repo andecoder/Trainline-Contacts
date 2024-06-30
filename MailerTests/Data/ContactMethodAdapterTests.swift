@@ -9,7 +9,7 @@
 import XCTest
 
 enum ContactMethod {
-    case email, sms
+    case email, post, sms
 }
 
 enum ContactMethodAdapter {
@@ -19,6 +19,9 @@ enum ContactMethodAdapter {
         guard let country = address.components(separatedBy: separator).last else { return .sms }
         if country == "Saint Lucia" || country == "Czech Republic" {
             return .email
+        }
+        if country == "Italy" {
+            return .post
         }
         return .sms
     }
@@ -36,6 +39,12 @@ final class ContactMethodAdapterTests: XCTestCase {
         let fullAddress = "street|city|state|postcode|Saint Lucia"
         let contactMethod = ContactMethodAdapter.method(from: fullAddress)
         XCTAssertEqual(contactMethod, .email)
+    }
+
+    func test_method_is_post_for_italy() {
+        let fullAddress = "street|city|state|postcode|Italy"
+        let contactMethod = ContactMethodAdapter.method(from: fullAddress)
+        XCTAssertEqual(contactMethod, .post)
     }
 
     func test_method_is_sms_for_other_countries() {
