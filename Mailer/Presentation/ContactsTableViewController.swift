@@ -9,7 +9,7 @@ import UIKit
 
 final class ContactsTableViewController: UITableViewController {
 
-    typealias DisplayDetails = (ContactViewModel) -> Void
+    typealias DisplayDetails = (ContactMethod) -> Void
     typealias LoadContacts = (@escaping LoadContactsCallback) -> Void
     typealias LoadContactsCallback = ([ContactViewModel]) -> Void
 
@@ -61,6 +61,6 @@ final class ContactsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let contact = contacts[indexPath.row]
-        displayDetails(contact)
+        displayDetails(contact.contactMethod)
     }
 }

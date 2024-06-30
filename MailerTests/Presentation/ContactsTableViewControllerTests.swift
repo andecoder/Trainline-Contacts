@@ -45,16 +45,16 @@ final class ContactsTableViewControllerTests: XCTestCase {
     }
 
     func test_present_detail_screen_when_cell_selected() {
-        var selectedViewModel: ContactViewModel?
+        var selectedContactMethod: ContactMethod?
         let contact = ContactViewModel(name: "Percy Jackson", contactMethod: .email)
         let sut = makeSUT(
-            displayDetails: { viewModel in selectedViewModel = viewModel },
+            displayDetails: { contactMethod in selectedContactMethod = contactMethod },
             loadContacts: { completion in completion([contact]) }
         )
 
         sut.tableView(sut.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
 
-        XCTAssertEqual(selectedViewModel, contact)
+        XCTAssertEqual(selectedContactMethod, contact.contactMethod)
     }
 
     // MARK: Helpers
