@@ -31,6 +31,7 @@
 		67F6366B2C31A35900592650 /* ContactMethodAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */; };
 		67F6366D2C31A40F00592650 /* ContactMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6366C2C31A40F00592650 /* ContactMethodTests.swift */; };
 		67F6366F2C31AA4000592650 /* Contact+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6366E2C31AA4000592650 /* Contact+TestData.swift */; };
+		67F636712C31AC1000592650 /* ContactViewModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636702C31AC1000592650 /* ContactViewModelAdapter.swift */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
 		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
@@ -81,6 +82,7 @@
 		67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodAdapter.swift; sourceTree = "<group>"; };
 		67F6366C2C31A40F00592650 /* ContactMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethodTests.swift; sourceTree = "<group>"; };
 		67F6366E2C31AA4000592650 /* Contact+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+TestData.swift"; sourceTree = "<group>"; };
+		67F636702C31AC1000592650 /* ContactViewModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModelAdapter.swift; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				67F636622C3198EE00592650 /* ContactLoader.swift */,
 				67F636682C31A33A00592650 /* ContactMethod.swift */,
 				67F6366A2C31A35900592650 /* ContactMethodAdapter.swift */,
+				67F636702C31AC1000592650 /* ContactViewModelAdapter.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */,
 				0C79247A21F71ACF00C7E3C2 /* CSVReaderWriter.swift in Sources */,
 				67F636632C3198EE00592650 /* ContactLoader.swift in Sources */,
+				67F636712C31AC1000592650 /* ContactViewModelAdapter.swift in Sources */,
 				0C79247F21F71ACF00C7E3C2 /* CSVReader.swift in Sources */,
 				67F636692C31A33A00592650 /* ContactMethod.swift in Sources */,
 				9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */,

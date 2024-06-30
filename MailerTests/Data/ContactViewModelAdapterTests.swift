@@ -10,23 +10,6 @@ import XCTest
 
 @testable import Mailer
 
-enum ContactViewModelAdapter {
-    static func adapt(
-        load: @escaping (([Contact]) -> Void) -> Void,
-        contactMethodMapper: @escaping (String) -> ContactMethod
-    ) -> (([ContactViewModel]) -> Void) -> Void {
-        { completion in
-            load { contacts in
-                let viewModels = contacts.map { contact -> ContactViewModel in
-                    let contactMethod = contactMethodMapper(contact.address)
-                    return ContactViewModel(name: contact.fullName, contactMethod: contactMethod)
-                }
-                completion(viewModels)
-            }
-        }
-    }
-}
-
 final class ContactViewModelAdapterTests: XCTestCase {
 
     func test_adapted_returns_view_models_for_each_character_received() {
