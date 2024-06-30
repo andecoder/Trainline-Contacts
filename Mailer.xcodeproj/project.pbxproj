@@ -22,6 +22,7 @@
 		67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */; };
 		67F636502C31842B00592650 /* MailerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6364F2C31842B00592650 /* MailerSnapshotTests.swift */; };
 		67F636582C31848900592650 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 67F636572C31848900592650 /* SnapshotTesting */; };
+		67F6365E2C318C8A00592650 /* ContactLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F6365D2C318C8A00592650 /* ContactLoaderTests.swift */; };
 		9A3AB2781F57699C00C822CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB2771F57699C00C822CF /* AppDelegate.swift */; };
 		9A3AB28B1F576A4E00C822CF /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28A1F576A4E00C822CF /* ContactsTableViewController.swift */; };
 		9A3AB28D1F576C7200C822CF /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3AB28C1F576C7200C822CF /* DetailsTableViewController.swift */; };
@@ -63,6 +64,7 @@
 		67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaks.swift"; sourceTree = "<group>"; };
 		67F6364D2C31842B00592650 /* MailerSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MailerSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F6364F2C31842B00592650 /* MailerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailerSnapshotTests.swift; sourceTree = "<group>"; };
+		67F6365D2C318C8A00592650 /* ContactLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactLoaderTests.swift; sourceTree = "<group>"; };
 		9A3AB2741F57699C00C822CF /* Mailer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mailer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3AB2771F57699C00C822CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3AB2831F57699C00C822CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		1B632783241938D1001943B8 /* MailerTests */ = {
 			isa = PBXGroup;
 			children = (
+				67F6365C2C318C6100592650 /* Data */,
 				1B632786241938D1001943B8 /* Info.plist */,
 				67F6365B2C318B7500592650 /* Extensions */,
 				67F6365A2C318B5C00592650 /* Presentation */,
@@ -153,6 +156,14 @@
 				67F636472C31807000592650 /* XCTestCase+MemoryLeaks.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		67F6365C2C318C6100592650 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				67F6365D2C318C8A00592650 /* ContactLoaderTests.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		9A3AB26B1F57699C00C822CF = {
@@ -347,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F636462C31765800592650 /* DetailsTableViewControllerTests.swift in Sources */,
+				67F6365E2C318C8A00592650 /* ContactLoaderTests.swift in Sources */,
 				67F636422C30600800592650 /* ContactsTableViewControllerTests.swift in Sources */,
 				67F636482C31807000592650 /* XCTestCase+MemoryLeaks.swift in Sources */,
 			);
