@@ -26,6 +26,19 @@ final class InMemoryContactLoaderCache {
     }
 
     func load(completion: @escaping ([ContactViewModel]) -> Void) {
+        loadContacts(completion: completion)
+    }
+
+    func contacts(with method: ContactMethod, completion: @escaping ([String]) -> Void) {
+        loadContacts { contacts in
+            let names = contacts
+                .filter { $0.contactMethod == method }
+                .map(\.name)
+            completion(names)
+        }
+    }
+
+    private func loadContacts(completion: @escaping ([ContactViewModel]) -> Void) {
         let operation = BlockOperation { [weak self] in
             guard let self else { return }
             guard contacts.isEmpty else {
@@ -106,5 +119,23 @@ final class InMemoryContactLoaderCacheTests: XCTestCase {
         }
         wait(for: [expectation])
         XCTAssertEqual(receivedContacs, testContacts)
+    }
+
+    func test_return_contacts_with_same_contact_method() {
+        let testContacts = [
+            ContactViewModel(name: "Bruce Baner", contactMethod: .sms),
+            ContactViewModel(name: "Tony Stark", contactMethod: .post)
+        ]
+        var receivedContacs: [String] = []
+        let sut = InMemoryContactLoaderCache { completion in
+            completion(testContacts)
+        }
+        let expectation = expectation(description: "Load called")
+        sut.contacts(with: .post) { contacts in
+            receivedContacs = contacts
+            expectation.fulfill()
+        }
+        wait(for: [expectation])
+        XCTAssertEqual(receivedContacs, ["Tony Stark"])
     }
 }
