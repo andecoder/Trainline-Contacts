@@ -27,7 +27,7 @@ final class ContactsTableViewControllerTests: XCTestCase {
 
     func test_display_contacts_when_request_succeeds() {
         let sut = makeSUT(loadContacts: { completion in
-            let dummyContact = ContactViewModel(name: "DUMMY", contactMethod: "DUMMY")
+            let dummyContact = ContactViewModel(name: "DUMMY", contactMethod: .post)
             let names = [dummyContact, dummyContact, dummyContact]
             completion(names)
         })
@@ -36,17 +36,17 @@ final class ContactsTableViewControllerTests: XCTestCase {
     }
 
     func test_display_correct_cell_information() throws {
-        let contact = ContactViewModel(name: "James Cameron", contactMethod: "SMS")
+        let contact = ContactViewModel(name: "James Cameron", contactMethod: .sms)
         let sut = makeSUT(loadContacts: { completion in completion([contact]) })
 
         let cell = try XCTUnwrap(sut.tableView.cellForRow(at: IndexPath(row: 0, section: 0)))
         XCTAssertEqual(cell.textLabel?.text, contact.name)
-        XCTAssertEqual(cell.detailTextLabel?.text, contact.contactMethod)
+        XCTAssertEqual(cell.detailTextLabel?.text, contact.contactMethod.title)
     }
 
     func test_present_detail_screen_when_cell_selected() {
         var selectedViewModel: ContactViewModel?
-        let contact = ContactViewModel(name: "Percy Jackson", contactMethod: "Mail")
+        let contact = ContactViewModel(name: "Percy Jackson", contactMethod: .email)
         let sut = makeSUT(
             displayDetails: { viewModel in selectedViewModel = viewModel },
             loadContacts: { completion in completion([contact]) }

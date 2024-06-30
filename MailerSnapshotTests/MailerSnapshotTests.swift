@@ -17,15 +17,15 @@ final class MailerSnapshotTests: XCTestCase {
 
     func test_contact_list_screen() {
         let dummyContacts = [
-            ContactViewModel(name: "Shelby Macias", contactMethod: "Post"),
-            ContactViewModel(name: "Porter Coffey", contactMethod: "Post"),
-            ContactViewModel(name: "Noelani Ward", contactMethod: "eMail"),
-            ContactViewModel(name: "Lillian Cotton", contactMethod: "SMS"),
-            ContactViewModel(name: "Ursa Faulkner", contactMethod: "eMail"),
-            ContactViewModel(name: "Cailin Mckinney", contactMethod: "Post"),
-            ContactViewModel(name: "Heidi Lawson", contactMethod: "SMS"),
-            ContactViewModel(name: "Mariam Madden", contactMethod: "SMS"),
-            ContactViewModel(name: "Velma Combs", contactMethod: "eMail")
+            ContactViewModel(name: "Shelby Macias", contactMethod: .post),
+            ContactViewModel(name: "Porter Coffey", contactMethod: .post),
+            ContactViewModel(name: "Noelani Ward", contactMethod: .email),
+            ContactViewModel(name: "Lillian Cotton", contactMethod: .sms),
+            ContactViewModel(name: "Ursa Faulkner", contactMethod: .email),
+            ContactViewModel(name: "Cailin Mckinney", contactMethod: .post),
+            ContactViewModel(name: "Heidi Lawson", contactMethod: .sms),
+            ContactViewModel(name: "Mariam Madden", contactMethod: .sms),
+            ContactViewModel(name: "Velma Combs", contactMethod: .email)
         ]
         let sut = ContactsTableViewController(
             displayDetails: { _ in }, loadContacts: { completion in completion(dummyContacts) }

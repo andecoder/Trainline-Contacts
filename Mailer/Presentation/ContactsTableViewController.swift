@@ -54,7 +54,7 @@ final class ContactsTableViewController: UITableViewController {
         let contact = contacts[indexPath.row]
 
         cell.textLabel?.text = contact.name
-        cell.detailTextLabel?.text = contact.contactMethod
+        cell.detailTextLabel?.text = contact.contactMethod.title
 
         return cell
     }
