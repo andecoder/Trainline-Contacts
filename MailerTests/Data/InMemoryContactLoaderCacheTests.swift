@@ -14,32 +14,19 @@ final class InMemoryContactLoaderCacheTests: XCTestCase {
 
     func test_load_contacts_on_first_access() {
         var loaderCalled = false
-        let expectation = expectation(description: "Load called")
-        let sut = InMemoryContactLoaderCache { _ in
-            loaderCalled = true
-            expectation.fulfill()
-        }
+        let sut = InMemoryContactLoaderCache { _ in loaderCalled = true }
         sut.load { _ in }
-        wait(for: [expectation])
         XCTAssertTrue(loaderCalled)
     }
 
     func test_only_has_one_active_request() {
         var loadCount = 0
-        let sut = InMemoryContactLoaderCache { completion in
-            loadCount += 1
-            completion([])
-        }
+        let sut = InMemoryContactLoaderCache { _ in loadCount += 1 }
 
-        let expectation = expectation(description: "Load called")
-        sut.load { _ in
-            expectation.fulfill()
-            sleep(10)
-        }
+        sut.load { _ in }
         sut.load { _ in }
         sut.load { _ in }
 
-        wait(for: [expectation])
         XCTAssertEqual(loadCount, 1)
     }
 
@@ -49,13 +36,8 @@ final class InMemoryContactLoaderCacheTests: XCTestCase {
             ContactViewModel(name: "Clark Kent", contactMethod: .post)
         ]
         var receivedContacs: [ContactViewModel] = []
-        let expectation = expectation(description: "Load called")
-        let sut = InMemoryContactLoaderCache { completion in
-            completion(testContacts)
-            expectation.fulfill()
-        }
-        sut.load { contacts in receivedContacs = contacts }
-        wait(for: [expectation])
+        let sut = InMemoryContactLoaderCache { completion in completion(testContacts) }
+        sut.load { receivedContacs = $0 }
         XCTAssertEqual(receivedContacs, testContacts)
     }
 
@@ -68,12 +50,7 @@ final class InMemoryContactLoaderCacheTests: XCTestCase {
             completion(testContacts)
         }
         sut.load { _ in }
-        let expectation = expectation(description: "Load called")
-        sut.load { contacts in
-            receivedContacs = contacts
-            expectation.fulfill()
-        }
-        wait(for: [expectation])
+        sut.load { receivedContacs = $0 }
         XCTAssertEqual(receivedContacs, testContacts)
     }
 
@@ -86,12 +63,7 @@ final class InMemoryContactLoaderCacheTests: XCTestCase {
         let sut = InMemoryContactLoaderCache { completion in
             completion(testContacts)
         }
-        let expectation = expectation(description: "Load called")
-        sut.contacts(with: .post) { contacts in
-            receivedContacs = contacts
-            expectation.fulfill()
-        }
-        wait(for: [expectation])
+        sut.contacts(with: .post) { receivedContacs = $0 }
         XCTAssertEqual(receivedContacs, ["Tony Stark"])
     }
 }

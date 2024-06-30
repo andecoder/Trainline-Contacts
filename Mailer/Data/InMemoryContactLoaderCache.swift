@@ -12,12 +12,8 @@ final class InMemoryContactLoaderCache {
 
     private let loadContacts: (@escaping ([ContactViewModel]) -> Void) -> Void
     private var contacts: [ContactViewModel] = []
-
-    private let queue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
+    private var hasPendingRequest = false
+    private var callbackQueue: [([ContactViewModel]) -> Void] = []
 
     init(loadContacts: @escaping (@escaping ([ContactViewModel]) -> Void) -> Void) {
         self.loadContacts = loadContacts
@@ -37,17 +33,28 @@ final class InMemoryContactLoaderCache {
     }
 
     private func loadContacts(completion: @escaping ([ContactViewModel]) -> Void) {
-        let operation = BlockOperation { [weak self] in
-            guard let self else { return }
-            guard contacts.isEmpty else {
-                completion(contacts)
-                return
-            }
-            loadContacts { [weak self] contacts in
-                self?.contacts = contacts
-                completion(contacts)
-            }
+        guard !hasPendingRequest else {
+            callbackQueue.append(completion)
+            return
         }
-        queue.addOperation(operation)
+        hasPendingRequest = true
+        guard contacts.isEmpty else {
+            let contacts = contacts
+            completion(contacts)
+            requestDidComplete()
+            return
+        }
+        loadContacts { [weak self] contacts in
+            self?.contacts = contacts
+            completion(contacts)
+            self?.requestDidComplete()
+        }
+    }
+
+    private func requestDidComplete() {
+        hasPendingRequest = false
+        guard !callbackQueue.isEmpty else { return }
+        let callback = callbackQueue.removeFirst()
+        loadContacts(completion: callback)
     }
 }
