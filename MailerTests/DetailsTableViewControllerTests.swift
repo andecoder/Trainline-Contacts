@@ -14,16 +14,27 @@ final class DetailsTableViewControllerTests: XCTestCase {
 
     func test_set_title_when_created() {
         let title = "My Custom Title"
-        let sut = DetailsTableViewController(title: title) { }
+        let sut = makeSUT(title: title)
         XCTAssertEqual(sut.title, title)
     }
 
     func test_fetch_contacts_on_load() {
         var didLoadContacts: Bool = false
-        let sut = DetailsTableViewController(title: "DUMMY") { didLoadContacts = true }
+        let sut = makeSUT { didLoadContacts = true }
 
         sut.loadViewIfNeeded()
 
         XCTAssertTrue(didLoadContacts)
+    }
+
+    // MARK: Helpers
+
+    private func makeSUT(
+        title: String = "DUMMY",
+        loadContacts: @escaping DetailsTableViewController.LoadContacts = { }
+    ) -> DetailsTableViewController {
+        let viewController = DetailsTableViewController(title: title, loadContacts: loadContacts)
+        viewController.loadViewIfNeeded()
+        return viewController
     }
 }
