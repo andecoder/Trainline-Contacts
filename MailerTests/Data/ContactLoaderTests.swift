@@ -29,28 +29,6 @@ struct ContactLoader {
 
 final class ContactLoaderTests: XCTestCase {
 
-    func test_load_opens_correct_file() {
-        let spyReader = ReaderSpy()
-        let dummyPath = "SomeRandomFilePath"
-        let sut = ContactLoader(filePath: dummyPath, reader: spyReader)
-        sut.load()
-        XCTAssertTrue(spyReader.calledActions.contains(.open(dummyPath)))
-    }
-
-    func test_load_closes_file_when_done() {
-        let spyReader = ReaderSpy()
-        let sut = ContactLoader(filePath: "DUMMY", reader: spyReader)
-        sut.load()
-        XCTAssertTrue(spyReader.calledActions.contains(.close))
-    }
-
-    func test_load_read_rows() {
-        let spyReader = ReaderSpy()
-        let sut = ContactLoader(filePath: "DUMMY", reader: spyReader)
-        sut.load()
-        XCTAssertTrue(spyReader.calledActions.contains(.readRow))
-    }
-
     func test_perform_actions_in_correct_order() {
         let spyReader = ReaderSpy()
         let dummyPath = "SomeRandomFilePath"
