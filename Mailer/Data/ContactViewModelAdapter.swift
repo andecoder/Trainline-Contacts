@@ -10,9 +10,9 @@ import Foundation
 
 enum ContactViewModelAdapter {
     static func adapt(
-        load: @escaping (([Contact]) -> Void) -> Void,
+        load: @escaping (@escaping ([Contact]) -> Void) -> Void,
         contactMethodMapper: @escaping (String) -> ContactMethod
-    ) -> (([ContactViewModel]) -> Void) -> Void {
+    ) -> (@escaping ([ContactViewModel]) -> Void) -> Void {
         { completion in
             load { contacts in
                 let viewModels = contacts.map { contact -> ContactViewModel in

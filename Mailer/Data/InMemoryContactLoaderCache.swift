@@ -10,7 +10,7 @@ import Foundation
 
 final class InMemoryContactLoaderCache {
 
-    private let loadContacts: (([ContactViewModel]) -> Void) -> Void
+    private let loadContacts: (@escaping ([ContactViewModel]) -> Void) -> Void
     private var contacts: [ContactViewModel] = []
 
     private let queue: OperationQueue = {
@@ -19,7 +19,7 @@ final class InMemoryContactLoaderCache {
         return queue
     }()
 
-    init(loadContacts: @escaping (([ContactViewModel]) -> Void) -> Void) {
+    init(loadContacts: @escaping (@escaping ([ContactViewModel]) -> Void) -> Void) {
         self.loadContacts = loadContacts
     }
 
